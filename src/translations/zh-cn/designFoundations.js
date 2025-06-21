@@ -1,4 +1,4 @@
-const designFoundationsTranslations = {
+export default {
   title: "基础",
   description:
     "设计资产和令牌，存储设计系统基础层（如颜色和排版）的值。它们用于组件，因此在此级别进行更改将在整个系统中产生共鸣。",
@@ -174,5 +174,3 @@ const designFoundationsTranslations = {
     },
   },
 };
-
-export default designFoundationsTranslations;
