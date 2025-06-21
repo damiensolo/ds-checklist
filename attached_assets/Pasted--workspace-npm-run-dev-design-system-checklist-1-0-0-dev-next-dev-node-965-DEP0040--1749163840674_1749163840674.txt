@@ -1,0 +1,53 @@
+~/workspace$ npm run dev
+
+> design-system-checklist@1.0.0 dev
+> next dev
+
+(node:965) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+ready - started server on 0.0.0.0:3000, url: http://localhost:3000
+info  - Using webpack 5. Reason: Enabled by default https://nextjs.org/docs/messages/webpack5
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:68:19)
+    at Object.createHash (node:crypto:138:10)
+    at BulkUpdateDecorator.hashFactory (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:138971:18)
+    at BulkUpdateDecorator.update (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:138872:50)
+    at OriginalSource.updateHash (/home/runner/workspace/node_modules/next/dist/compiled/webpack-sources3/index.js:1:10264)
+    at NormalModule._initBuildHash (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68468:17)
+    at handleParseResult (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68534:10)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68628:4
+    at processResult (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68343:11)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68407:5
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:68:19)
+    at Object.createHash (node:crypto:138:10)
+    at BulkUpdateDecorator.hashFactory (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:138971:18)
+    at BulkUpdateDecorator.update (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:138872:50)
+    at OriginalSource.updateHash (/home/runner/workspace/node_modules/next/dist/compiled/webpack-sources3/index.js:1:10264)
+    at NormalModule._initBuildHash (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68468:17)
+    at handleParseResult (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68534:10)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68628:4
+    at processResult (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68343:11)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68407:5
+node:internal/crypto/hash:68
+  this[kHandle] = new _Hash(algorithm, xofLen);
+                  ^
+
+Error: error:0308010C:digital envelope routines::unsupported
+    at new Hash (node:internal/crypto/hash:68:19)
+    at Object.createHash (node:crypto:138:10)
+    at BulkUpdateDecorator.hashFactory (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:138971:18)
+    at BulkUpdateDecorator.update (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:138872:50)
+    at OriginalSource.updateHash (/home/runner/workspace/node_modules/next/dist/compiled/webpack-sources3/index.js:1:10264)
+    at NormalModule._initBuildHash (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68468:17)
+    at handleParseResult (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68534:10)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68628:4
+    at processResult (/home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68343:11)
+    at /home/runner/workspace/node_modules/next/dist/compiled/webpack/bundle5.js:68407:5 {
+  opensslErrorStack: [ 'error:03000086:digital envelope routines::initialization error' ],
+  library: 'digital envelope routines',
+  reason: 'unsupported',
+  code: 'ERR_OSSL_EVP_UNSUPPORTED'
+}
+
+Node.js v21.1.0
