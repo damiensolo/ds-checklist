@@ -8,6 +8,29 @@ const coreTranslations = {
   share: "分享",
   contribute: "贡献",
 
+  previous: "上一个",
+  next: "下一个",
+  completed: "已完成",
+
+  exportTitle: "分享",
+  exportSubtitle:
+    "设计系统最好是一起构建的。这就是为什么我们可以分享这个检查清单，包括您已经标记的项目。与您的团队分享您的进度，以便大家可以一起跟踪。",
+  exportAction: "分享您的进度",
+  exportComplete: "链接已复制",
+
+  moreTitle: "寻找更多？",
+
+  footerTitle: "",
+  footerText: "",
+  footerAction: "了解更多",
+};
+
+export default coreTranslations;
+
+  about: "关于",
+  share: "分享",
+  contribute: "贡献",
+
   previous: "上一页",
   next: "下一页",
   completed: "完成",

@@ -187,3 +187,5 @@ const maintenanceTranslations = {
 };
 
 export default maintenanceTranslations;
+
+export default maintenanceTranslations;
