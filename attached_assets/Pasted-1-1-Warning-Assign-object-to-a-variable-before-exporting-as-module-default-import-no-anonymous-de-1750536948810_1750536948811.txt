@@ -1,0 +1,150 @@
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+~/workspace$ ^C
+~/workspace$ npm run build
+
+> design-system-checklist@1.0.0 build
+> next build
+
+(node:3808) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+Failed to compile.
+
+./pages/about/index.js
+10:8  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+15:65  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+16:10  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+16:43  Error: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./pages/export/[id].js
+19:6  Warning: React Hook React.useEffect has a missing dependency: 'push'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+
+./src/components/Header/Header.js
+24:58  Warning: React Hook useCallback has a missing dependency: 'toggleMenu'. Either include it or remove the dependency array.  react-hooks/exhaustive-deps
+36:11  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+52:15  Error: Do not use an `<a>` element to navigate to `/about/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+57:15  Error: Do not use an `<a>` element to navigate to `/share/`. Use `<Link />` from `next/link` instead. See: https://nextjs.org/docs/messages/no-html-link-for-pages  @next/next/no-html-link-for-pages
+
+./src/data/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/index.js
+6:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
