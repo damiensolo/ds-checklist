@@ -1,0 +1,95 @@
+
+./src/data/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/index.js
+6:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/data/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/en/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/ko/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/pt/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/components.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/core.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/designFoundations.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/designLanguage.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/index.js
+7:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/tr/maintenance.js
+1:1  Warning: Assign object to a variable before exporting as module default  import/no-anonymous-default-export
+
+./src/translations/zh-cn/core.js
+31:7  Error: Parsing error: Missing semicolon. (31:7)
+
+./src/translations/zh-cn/maintenance.js
+Error: Parsing error: Only one default export allowed per module. (191:0)
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
