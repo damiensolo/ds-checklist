@@ -164,7 +164,7 @@ const maintenanceTranslations = {
         "m-contribution-rules": {
           title: "系统的内部规则",
           description:
-            "向产品团队解释您的设计和开发流程的工作方式。设计系统团队通常比产品团队移动得更慢，因为在影响整个产品的组件中做出可扩展的决策更加负责。",
+            "向产品团队解释您的设计和开发流程的工作方式。设计系统团队通常比产品团队移动得更慢，因为在影响整个产品的产品的组件中做出可扩展的决策更加负责。",
         },
         "m-contribution-guidelines": {
           title: "贡献指南",
