@@ -1,4 +1,4 @@
-export default {
+const maintenanceTranslations = {
   title: "维护",
   description:
     "设计系统与您的团队可能承担的任何其他项目没有区别。为了成功地构建和维护一个设计系统，您需要一个清晰的战略，每天都要执行得很好，并且您需要创造机会让您的同事提供反馈，以帮助共享您的设计系统。",
@@ -185,3 +185,5 @@ export default {
     },
   },
 };
+
+export default maintenanceTranslations;
