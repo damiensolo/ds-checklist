@@ -16,7 +16,7 @@ const ExportRoute = () => {
     if (checkedIds && checkedIds.length) setCheckedIds(checkedIds);
     loadedRef.current = true;
     push('/');
-  }, [setCheckedIds, id]);
+  }, [setCheckedIds, id, push]);
 
   return null;
 };
