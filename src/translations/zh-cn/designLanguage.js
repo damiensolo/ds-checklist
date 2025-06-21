@@ -1,4 +1,4 @@
-export default {
+const designLanguageTranslations = {
   title: "设计语言",
   description:
     "像任何语言一样，设计语言是通过产品设计方法与您的受众进行沟通的有条理的方式。它是一致的客户体验的基石。",
@@ -70,3 +70,5 @@ export default {
     },
   },
 };
+
+export default designLanguageTranslations;

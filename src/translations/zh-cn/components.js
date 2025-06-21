@@ -1,4 +1,4 @@
-export default {
+const componentsTranslations = {
   title: "核心组件",
   description:
     "组件是用户界面的主要构建块。构建可重用的组件库通过减少设计和技术债务以及加快流程来增强产品开发工作流程。核心组件不能被分解为细粒度的部分而不失去它们的含义。",
@@ -1010,3 +1010,5 @@ export default {
     },
   },
 };
+
+export default componentsTranslations;
