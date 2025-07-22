@@ -10,6 +10,18 @@ import IconArrowRight from "../../src/icons/arrowRight";
 
 const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();
+  
+  // Early return if translations are not loaded
+  if (!t) {
+    return (
+      <Layout>
+        <div className={s.container}>
+          <h1>Design System Metrics</h1>
+          <p>Loading...</p>
+        </div>
+      </Layout>
+    );
+  }
 
   const metricsData = {
     id: "metrics",
@@ -272,11 +284,17 @@ const MetricsRoute = ({ t }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  const t = (await import(`../../src/translations/${locale}/index`)).default;
-
-  return {
-    props: { t },
-  };
+  try {
+    const t = (await import(`../../src/translations/${locale}/index`)).default;
+    return {
+      props: { t },
+    };
+  } catch (error) {
+    console.error('Failed to load translations:', error);
+    return {
+      props: { t: null },
+    };
+  }
 }
 
 export default MetricsRoute;
