@@ -1,3 +1,4 @@
+
 import React from "react";
 import Link from "next/link";
 import Layout from "../src/components/Layout";
@@ -6,11 +7,12 @@ import Hero from "../src/components/Hero";
 import SectionTitle from "../src/components/SectionTitle";
 import ArrowRightIcon from "../src/icons/arrowRight";
 import data from "../src/data";
+import translations from "../src/translations/en";
 import { useCheckedIds } from "../src/utilities/checklistsContext";
 import s from "./index.module.css";
 
-const HomeRoute = (props) => {
-  const { t } = props;
+const HomeRoute = () => {
+  const t = translations;
   const keys = Object.keys(data);
   const items = keys.map((k) => data[k]);
   const { checkedIds } = useCheckedIds();
@@ -57,10 +59,5 @@ const HomeRoute = (props) => {
     </Layout>
   );
 };
-
-export async function getStaticProps() {
-  const translation = await import('../src/translations/en/index');
-  return { props: { t: translation.default } };
-}
 
 export default HomeRoute;
