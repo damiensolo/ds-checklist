@@ -14,13 +14,10 @@ const nextConfig = {
     unoptimized: true
   },
   swcMinify: true,
-  output: 'standalone',
-  trailingSlash: false,
+  output: 'export',
+  trailingSlash: true,
   poweredByHeader: false,
   distDir: 'out',
-  experimental: {
-    outputStandalone: true,
-  },
 };
 
 module.exports = nextConfig;
