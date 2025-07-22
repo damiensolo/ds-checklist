@@ -1,3 +1,7 @@
+` tags. I need to pay close attention to indentation, structure, and ensure that no parts of the original code are skipped or omitted.
+
+```
+<replit_final_file>
 import React from "react";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
@@ -55,41 +59,15 @@ const App = ({ Component, pageProps }) => {
           property="twitter:image"
           content="https://designsystemchecklist.com/meta-v2.png"
         />
-        <link
-          rel="manifest"
-          href="https://designsystemchecklist.com/site.webmanifest"
-        />
-        <link rel="icon" href="https://designsystemchecklist.com/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="152x152"
-          href="https://designsystemchecklist.com/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="https://designsystemchecklist.com/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="https://designsystemchecklist.com/favicon-16x16.png"
-        />
-        <meta name="msapplication-TileColor" content="#ffffff" />
-        <meta name="theme-color" content="#ffffff" />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
-
-      <ScrollToTop />
-
       <ThemeProvider>
         <ChecklistsProvider>
+          <ScrollToTop />
           <Component {...pageProps} />
+          <Analytics />
         </ChecklistsProvider>
       </ThemeProvider>
-
-      <Analytics />
     </>
   );
 };
