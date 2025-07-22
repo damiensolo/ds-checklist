@@ -4,7 +4,7 @@ import Layout from "../../src/components/Layout";
 import CategoryNav from "../../src/components/CategoryNav";
 import Section from "../../src/components/Section";
 import data from "../../src/data";
-import translations from "../../src/translations/en";
+import translations from "../../src/translations/en/index";
 
 const CategoryRoute = () => {
   const router = useRouter();
@@ -48,9 +48,6 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps() {
-  const translation = await import('../../src/translations/en/index');
-  return { props: { t: translation.default } };
-}
+
 
 export default CategoryRoute;

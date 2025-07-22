@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "../../src/components/Layout";
 import Hero from "../../src/components/Hero";
@@ -211,7 +210,7 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
 
   const section = metricsData.sections.find(s => s.id === sectionId);
   const sectionTranslations = metricsTranslations[sectionId];
-  
+
   if (!section || !sectionTranslations) {
     return null;
   }
