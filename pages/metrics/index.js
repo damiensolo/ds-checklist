@@ -247,12 +247,19 @@ const MetricsRoute = ({ t }) => {
   );
 };
 
-export async function getStaticProps({ locale }) {
-  const t = (await import(`../../src/translations/${locale}/index`)).default;
-
-  return {
-    props: { t },
-  };
+export async function getStaticProps({ locale = 'en' }) {
+  try {
+    const t = (await import(`../../src/translations/${locale || 'en'}/index`)).default;
+    return {
+      props: { t },
+    };
+  } catch (error) {
+    // Fallback to English if locale translation doesn't exist
+    const t = (await import(`../../src/translations/en/index`)).default;
+    return {
+      props: { t },
+    };
+  }
 }
 
 export default MetricsRoute;
