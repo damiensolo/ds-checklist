@@ -10,7 +10,6 @@ const nextConfig = {
     unoptimized: true
   },
   swcMinify: true,
-  output: 'export',
   trailingSlash: true,
   poweredByHeader: false,
   distDir: 'out',
