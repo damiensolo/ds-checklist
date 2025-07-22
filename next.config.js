@@ -19,7 +19,6 @@ const nextConfig = {
     unoptimized: true
   },
   swcMinify: true,
-  output: 'standalone',
   async rewrites() {
     return [
       {
