@@ -7,7 +7,7 @@
 
 .list {
   margin: calc(var(--spacing-48) * 2) 0 calc(var(--spacing-48) * 3);
-  padding: 0 calc(var(--spacing-48) + var(--spacing-4));
+  padding: 0 var(--spacing-48);
 }
 
 .listItem {
@@ -40,6 +40,11 @@
   color: inherit;
   cursor: pointer;
   transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.sectionOverview:hover {
+  cursor: pointer;
 }
 
 .sectionOverview:hover .arrowRight {
@@ -49,9 +54,9 @@
 
 .arrowRight {
   position: absolute;
-  right: 0;
+  right: var(--spacing-32);
   top: 50%;
-  transform: translate(-12px, -50%) translateZ(0);
+  transform: translate(12px, -50%) translateZ(0);
   opacity: 0;
   transition: transform var(--transition) ease-in-out,
     opacity var(--transition) ease-in-out;

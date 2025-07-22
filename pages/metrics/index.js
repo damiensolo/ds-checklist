@@ -168,17 +168,19 @@ const MetricsRoute = ({ t }) => {
 
             return (
               <div key={sectionData.id} className={s.listItem}>
-                <Link href={`/metrics/${sectionData.id}`} className={s.sectionOverview}>
-                  <SectionTitle
-                    title={sectionTranslations.title}
-                    total={total}
-                    completed={completed}
-                    completedLabel={t.core.completed}
-                  />
-                  <p className={s.sectionDescription}>{sectionTranslations.description}</p>
-                  <span className={s.arrowRight}>
-                    <IconArrowRight />
-                  </span>
+                <Link href={`/metrics/${sectionData.id}`}>
+                  <div className={s.sectionOverview}>
+                    <SectionTitle
+                      title={sectionTranslations.title}
+                      total={total}
+                      completed={completed}
+                      completedLabel={t.core.completed}
+                    />
+                    <p className={s.sectionDescription}>{sectionTranslations.description}</p>
+                    <span className={s.arrowRight}>
+                      <IconArrowRight />
+                    </span>
+                  </div>
                 </Link>
               </div>
             );
