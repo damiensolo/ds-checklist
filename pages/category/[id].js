@@ -6,10 +6,9 @@ import Section from "../../src/components/Section";
 import data from "../../src/data";
 import translations from "../../src/translations/en/index";
 
-const CategoryRoute = () => {
+const CategoryRoute = ({ t }) => {
   const router = useRouter();
   const { id } = router.query;
-  const t = translations;
 
   if (!id || !data[id]) {
     return (
@@ -48,6 +47,11 @@ export async function getStaticPaths() {
   };
 }
 
-
+export async function getStaticProps({ params }) {
+  const t = (await import('../../src/translations/en/index')).default;
+  return {
+    props: { t },
+  };
+}
 
 export default CategoryRoute;
