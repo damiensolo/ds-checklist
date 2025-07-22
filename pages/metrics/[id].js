@@ -29,25 +29,25 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
         id: "adoption-engagement", 
         title: "Adoption & Engagement",
         description: "Track how teams and products are adopting and engaging with your design system.",
-        checklist: ["metrics-adoption-rate", "metrics-component-usage", "metrics-contributions"]
+        checklist: ["metrics-adoption-rate", "metrics-component-usage", "metrics-contributions", "metrics-documentation-visits", "metrics-team-satisfaction", "metrics-participation-support"]
       },
       {
         id: "product-design-efficiency",
         title: "Product & Design Efficiency", 
         description: "Measure improvements in design and product development workflows.",
-        checklist: ["metrics-time-to-market", "metrics-prototype-speed"]
+        checklist: ["metrics-time-to-market", "metrics-prototype-speed", "metrics-component-library-health", "metrics-component-detachments", "metrics-design-review-time", "metrics-onboarding-time"]
       },
       {
         id: "development-efficiency",
         title: "Development & Engineering Efficiency",
         description: "Track improvements in development speed and engineering workflows.",
-        checklist: ["metrics-handoff-time", "metrics-task-completion", "metrics-tech-debt"]
+        checklist: ["metrics-handoff-time", "metrics-task-completion", "metrics-tech-debt", "metrics-code-complexity", "metrics-linter-warnings", "metrics-system-update-efficiency"]
       },
       {
         id: "quality-ux",
         title: "Quality & User Experience",
         description: "Monitor the impact on product quality and user experience.",
-        checklist: ["metrics-ui-consistency", "metrics-accessibility", "metrics-support-tickets"]
+        checklist: ["metrics-ui-consistency", "metrics-accessibility", "metrics-support-tickets", "metrics-design-debt", "metrics-accessibility-score", "metrics-user-satisfaction", "metrics-task-completion-rates"]
       }
     ]
   };
@@ -97,7 +97,19 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
         },
         "metrics-contributions": {
           title: "Contributions to the System",
-          description: "Monitor contributions (new components, fixes) from various teams."
+          description: "Monitor the number of contributions (e.g., new components, bug fixes) from various teams, indicating a collaborative and valued system."
+        },
+        "metrics-documentation-visits": {
+          title: "Documentation Visits",
+          description: "Measure engagement with the design system's documentation to see if it's a helpful and frequently used resource."
+        },
+        "metrics-team-satisfaction": {
+          title: "Team Satisfaction Surveys",
+          description: "Collect qualitative feedback from design, development, and product teams to gauge their satisfaction and identify areas for improvement."
+        },
+        "metrics-participation-support": {
+          title: "Participation & Support",
+          description: "Track attendance at design system meetings ('office hours') and the number of support questions, which should decrease as the system matures."
         }
       }
     },
@@ -111,7 +123,23 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
         },
         "metrics-prototype-speed": {
           title: "Prototype Speed", 
-          description: "Track acceleration in creating and testing new prototypes."
+          description: "Track the acceleration in how quickly new feature prototypes can be created and tested."
+        },
+        "metrics-component-library-health": {
+          title: "Component Library Health",
+          description: "Monitor the growth of reusable components in the system and track total components available."
+        },
+        "metrics-component-detachments": {
+          title: "Component Detachments (Figma)",
+          description: "Track how often designers detach from components, which can signal gaps or usability issues in the system."
+        },
+        "metrics-design-review-time": {
+          title: "Design Review Time",
+          description: "Measure the reduction in time spent in design review cycles due to a shared understanding of patterns and components."
+        },
+        "metrics-onboarding-time": {
+          title: "Onboarding Time",
+          description: "Monitor the time saved when onboarding new designers and developers, as they can get up to speed with established patterns quickly."
         }
       }
     },
@@ -129,7 +157,19 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
         },
         "metrics-tech-debt": {
           title: "Reduction in Technical Debt",
-          description: "Track the decrease in UI-related tech debt through component reuse."
+          description: "Track the decrease in UI-related technical debt by measuring the reuse of standardized, pre-vetted code."
+        },
+        "metrics-code-complexity": {
+          title: "Code Complexity",
+          description: "Monitor for a reduction in code complexity and the need for refactoring, thanks to component reuse."
+        },
+        "metrics-linter-warnings": {
+          title: "Linter Warnings",
+          description: "Track the number of UI-related linter warnings, which should decrease significantly with a standardized codebase."
+        },
+        "metrics-system-update-efficiency": {
+          title: "System-Wide Update Efficiency",
+          description: "Measure the reduction in time and effort required to implement system-wide design changes or platform upgrades."
         }
       }
     },
@@ -147,7 +187,23 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
         },
         "metrics-support-tickets": {
           title: "Support Ticket Reduction",
-          description: "Track the decrease in UI-related support tickets."
+          description: "Track the decrease in support tickets related to UI confusion or usability problems."
+        },
+        "metrics-design-debt": {
+          title: "Reduction in Design Debt",
+          description: "Monitor the decrease in the number of design debt tickets and 'snowflake' components (one-off designs)."
+        },
+        "metrics-accessibility-score": {
+          title: "Accessibility Score",
+          description: "Track improvements in automated accessibility audit scores (e.g., WCAG compliance)."
+        },
+        "metrics-user-satisfaction": {
+          title: "User Satisfaction",
+          description: "Monitor changes in user satisfaction scores (e.g., CSAT, NPS) related to the product's interface and usability."
+        },
+        "metrics-task-completion-rates": {
+          title: "Task Completion Rates",
+          description: "Measure improvements in the success rate of users completing key tasks within the product."
         }
       }
     }
