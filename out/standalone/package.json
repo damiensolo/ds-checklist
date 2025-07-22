@@ -1,0 +1,38 @@
+{
+  "name": "design-system-checklist",
+  "version": "1.0.0",
+  "homepage": "https://designsystemchecklist.com/",
+  "private": true,
+  "dependencies": {
+    "@splitbee/web": "^0.3.0",
+    "@vercel/analytics": "^1.1.1",
+    "classnames": "^2.3.1",
+    "next": "^13.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-transition-group": "^4.4.2"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start -H 0.0.0.0 -p ${PORT:-3000}",
+    "clean": "rm -rf .next node_modules package-lock.json && npm cache clean --force && npm install"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "8.53.0",
+    "eslint-config-next": "14.0.1",
+    "prettier": "2.3.2"
+  }
+}
