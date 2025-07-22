@@ -43,5 +43,7 @@ task = "shell.exec"
 args = "npm run dev"
 
 [deployment]
-run = ["sh", "-c", "npx serve out -s -l 3000"]
+run = ["sh", "-c", "npm start"]
 build = ["sh", "-c", "npm run build"]
+
+

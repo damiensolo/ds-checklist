@@ -1,64 +1,34 @@
-
-import React from "react";
-import Head from "next/head";
+import { useState, useEffect } from "react";
 import { Analytics } from "@vercel/analytics/react";
-import { ChecklistsProvider } from "../src/utilities/checklistsContext";
-import { ThemeProvider } from "../src/utilities/themeContext";
-import "../pages/app.css";
 
-// ScrollToTop component
-const ScrollToTop = () => {
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
+import Layout from "src/components/Layout";
+import ChecklistsContextProvider from "src/utilities/checklistsContext";
+import ThemeContextProvider from "src/utilities/themeContext";
+
+import "src/assets/styles/reset.css";
+import "src/assets/styles/variables.css";
+import "src/assets/fonts/sneak.css";
+import "./app.css";
+
+export default function MyApp({ Component, pageProps }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
   }, []);
-  return null;
-};
 
-function MyApp({ Component, pageProps }) {
+  if (!mounted) {
+    return null;
+  }
+
   return (
-    <>
-      <Head>
-        <title>Design System Checklist</title>
-        <meta
-          name="description"
-          content="A checklist to help you plan, build and grow your design system."
-        />
-        <meta
-          property="og:title"
-          content="Design System Checklist"
-        />
-        <meta
-          property="og:description"
-          content="A checklist to help you plan, build and grow your design system."
-        />
-        <meta
-          property="og:image"
-          content="https://designsystemchecklist.com/meta-v2.png"
-        />
-        <meta
-          property="twitter:title"
-          content="Design System Checklist"
-        />
-        <meta
-          property="twitter:description"
-          content="A checklist to help you plan, build and grow your design system."
-        />
-        <meta
-          property="twitter:image"
-          content="https://designsystemchecklist.com/meta-v2.png"
-        />
-      </Head>
-      <ThemeProvider>
-        <ChecklistsProvider>
-          <ScrollToTop />
+    <ChecklistsContextProvider>
+      <ThemeContextProvider>
+        <Layout>
           <Component {...pageProps} />
           <Analytics />
-        </ChecklistsProvider>
-      </ThemeProvider>
-    </>
+        </Layout>
+      </ThemeContextProvider>
+    </ChecklistsContextProvider>
   );
 }
-
-export default MyApp;
