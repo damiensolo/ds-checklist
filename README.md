@@ -1,6 +1,6 @@
 ### Running locally
 
 ```
-$ yarn install
-$ yarn start
+$ npm install
+$ npm run dev
 ```

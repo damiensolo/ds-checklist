@@ -8,7 +8,6 @@
     "@vercel/analytics": "^1.1.1",
     "classnames": "^2.3.1",
     "next": "^12.3.4",
-    "node": "^21.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-transition-group": "^4.4.2"
@@ -16,7 +15,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start -H 0.0.0.0"
+    "start": "next start -H 0.0.0.0",
+    "clean": "rm -rf .next node_modules package-lock.json && npm cache clean --force && npm install"
   },
   "browserslist": {
     "production": [
