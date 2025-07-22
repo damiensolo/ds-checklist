@@ -17,7 +17,9 @@ const MetricsRoute = () => {
       completed: "Completed",
       previous: "Previous",
       next: "Next",
-      exportAction: "Export"
+      exportAction: "Export",
+      about: "About",
+      share: "Share"
     }
   };
 
