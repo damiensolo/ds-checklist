@@ -3,13 +3,16 @@ import ChecklistItem from '../ChecklistItem';
 import s from './Checklist.module.css';
 
 const Checklist = ({ checklist }) => {
-  const renderItem = (item) => {
-    return <ChecklistItem key={item.id} item={item} />;
-  };
-
   return (
     <ul className={s.container}>
-      {checklist.map(renderItem)}
+      {checklist.map(item => (
+        <ChecklistItem
+          title={item.title}
+          id={item.id}
+          key={item.title}
+          description={item.description}
+        />
+      ))}
     </ul>
   );
 };

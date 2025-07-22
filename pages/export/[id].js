@@ -1,57 +1,24 @@
-import React from "react";
-import { useRouter } from "next/router";
-import Layout from "../../src/components/Layout";
-import CategoryNav from "../../src/components/CategoryNav";
-import Section from "../../src/components/Section";
-import data from "../../src/data";
-import translations from "../../src/translations/en/index";
+import React from 'react';
+import { useRouter } from 'next/router';
+import { useCheckedIds } from '../../src/utilities/checklistsContext';
+import { decode } from '../../src/utilities/export';
 
-const ExportRoute = ({ t }) => {
-  const router = useRouter();
-  const { id } = router.query;
+const ExportRoute = () => {
+  const { query, push } = useRouter();
+  const { id } = query;
+  const { setCheckedIds } = useCheckedIds();
+  const loadedRef = React.useRef(false);
 
-  if (!id || !data[id]) {
-    return (
-      <Layout t={t}>
-        <div>Category not found</div>
-      </Layout>
-    );
-  }
+  React.useEffect(() => {
+    if (loadedRef.current || !id) return;
+    const checkedIds = decode(id).split(',');
 
-  const categoryData = data[id];
+    if (checkedIds && checkedIds.length) setCheckedIds(checkedIds);
+    loadedRef.current = true;
+    push('/');
+  }, [setCheckedIds, id]);
 
-  return (
-    <Layout t={t}>
-      <CategoryNav t={t} categoryId={id} />
-      {categoryData.sections.map((section, index) => (
-        <Section
-          key={section.id}
-          section={section}
-          sectionTranslations={t[id]?.sections?.[section.id]}
-          isLast={index === categoryData.sections.length - 1}
-          t={t}
-        />
-      ))}
-    </Layout>
-  );
+  return null;
 };
-
-export async function getStaticPaths() {
-  const paths = Object.keys(data).map((id) => ({
-    params: { id },
-  }));
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const t = (await import('../../src/translations/en/index')).default;
-  return {
-    props: { t },
-  };
-}
 
 export default ExportRoute;

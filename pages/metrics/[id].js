@@ -1,3 +1,4 @@
+
 import React from "react";
 import Layout from "../../src/components/Layout";
 import Hero from "../../src/components/Hero";
@@ -210,7 +211,7 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
 
   const section = metricsData.sections.find(s => s.id === sectionId);
   const sectionTranslations = metricsTranslations[sectionId];
-
+  
   if (!section || !sectionTranslations) {
     return null;
   }
@@ -281,8 +282,8 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ params }) {
-  const t = (await import('../../src/translations/en/index')).default;
+export async function getStaticProps({ params, locale }) {
+  const t = (await import(`../../src/translations/${locale}/index`)).default;
 
   return {
     props: { 
