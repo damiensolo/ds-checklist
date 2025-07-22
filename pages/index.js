@@ -66,8 +66,10 @@ export async function getStaticProps({ locale }) {
     };
   } catch (error) {
     console.error('Error loading translations:', error);
+    // Fallback to English translations
+    const fallbackT = (await import(`../src/translations/en/index`)).default;
     return {
-      props: { t: {} },
+      props: { t: fallbackT },
     };
   }
 }
