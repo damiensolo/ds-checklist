@@ -125,12 +125,18 @@ const MetricsRoute = ({ t }) => {
           {metricsData.sections.map((sectionData) => {
             const sectionTranslations = metricsTranslations[sectionData.id];
             
+            // Transform the checklist items to match the expected structure
+            const checklistItems = sectionData.checklist.map(itemId => ({
+              id: itemId,
+              title: sectionTranslations[itemId].title,
+              description: sectionTranslations[itemId].description
+            }));
+            
             return (
               <div key={sectionData.id} id={sectionData.id} className={s.section}>
                 <h2 className={s.sectionTitle}>{sectionTranslations.title}</h2>
                 <Checklist
-                  items={sectionData.checklist}
-                  translations={sectionTranslations}
+                  checklist={checklistItems}
                 />
               </div>
             );
