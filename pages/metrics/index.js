@@ -1,3 +1,4 @@
+
 import React from "react";
 import Hero from "../../src/components/Hero";
 import Layout from "../../src/components/Layout";
@@ -8,11 +9,25 @@ import { useCheckedIds } from "../../src/utilities/checklistsContext";
 import s from "./metrics.module.css";
 import IconArrowRight from "../../src/icons/arrowRight";
 
+// Import all translations statically
+import enTranslations from "../../src/translations/en/index";
+import koTranslations from "../../src/translations/ko/index";
+import ptTranslations from "../../src/translations/pt/index";
+import trTranslations from "../../src/translations/tr/index";
+
+// Map of available translations
+const translationMap = {
+  en: enTranslations,
+  ko: koTranslations,
+  pt: ptTranslations,
+  tr: trTranslations,
+};
+
 const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();
   
-  // Provide fallback if translations are not loaded
-  const safeT = t || { core: { completed: "Completed" } };
+  // Ensure we always have a valid translation object
+  const safeT = t && t.core ? t : enTranslations;
 
   const metricsData = {
     id: "metrics",
@@ -251,32 +266,9 @@ const MetricsRoute = ({ t }) => {
 };
 
 export async function getStaticProps({ locale }) {
-  // Always try to load English translations as default
-  let t;
-  try {
-    const englishTranslations = (await import(`../../src/translations/en/index`)).default;
-    t = englishTranslations;
-    
-    // If locale is not English, try to load that locale
-    if (locale && locale !== 'en') {
-      try {
-        const localeTranslations = (await import(`../../src/translations/${locale}/index`)).default;
-        t = localeTranslations;
-      } catch (localeError) {
-        console.warn(`Locale ${locale} not found, falling back to English`);
-        // Keep using English translations
-      }
-    }
-  } catch (error) {
-    console.error('Failed to load any translations:', error);
-    // Create minimal fallback
-    t = {
-      core: {
-        completed: "Completed"
-      }
-    };
-  }
-
+  // Use static translation map instead of dynamic imports
+  const t = translationMap[locale] || translationMap.en;
+  
   return {
     props: { t },
   };
