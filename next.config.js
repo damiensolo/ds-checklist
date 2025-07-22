@@ -19,11 +19,25 @@ const nextConfig = {
     unoptimized: true
   },
   swcMinify: true,
+  output: 'standalone',
   async rewrites() {
     return [
       {
         source: '/health',
         destination: '/api/health',
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/health',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'no-cache, no-store, must-revalidate',
+          },
+        ],
       },
     ];
   },
