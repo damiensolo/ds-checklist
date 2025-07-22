@@ -12,6 +12,13 @@ const nextConfig = {
   experimental: {
     outputFileTracingRoot: process.cwd(),
   },
+  compress: true,
+  poweredByHeader: false,
+  generateEtags: false,
+  images: {
+    unoptimized: true
+  },
+  swcMinify: true,
 };
 
 module.exports = nextConfig;
