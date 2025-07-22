@@ -46,3 +46,4 @@ args = "npm run dev"
 build = ["sh", "-c", "npm run build"]
 deploymentTarget = "static"
 publicDir = "public"
+run = ["sh", "-c", ""]
