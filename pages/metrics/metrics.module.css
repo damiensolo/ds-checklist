@@ -1,4 +1,3 @@
-
 .container {
   max-width: var(--page-width);
   margin: 0 auto;
@@ -7,7 +6,7 @@
 
 .list {
   margin: calc(var(--spacing-32) * 2) 0 calc(var(--spacing-48) * 3);
-  padding: 0 var(--spacing-48);
+  padding: 0 var(--spacing-24);
 }
 
 .listItem {
