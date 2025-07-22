@@ -250,34 +250,36 @@ const MetricsRoute = ({ t }) => {
   );
 };
 
-export async function getStaticProps({ locale = 'en' }) {
+export async function getStaticProps({ locale }) {
+  // Always try to load English translations as default
+  let t;
   try {
-    const t = (await import(`../../src/translations/${locale}/index`)).default;
-    return {
-      props: { t },
-    };
-  } catch (error) {
-    console.error('Failed to load translations for locale:', locale, error);
-    // Fallback to English translations
-    try {
-      const fallbackT = (await import(`../../src/translations/en/index`)).default;
-      return {
-        props: { t: fallbackT },
-      };
-    } catch (fallbackError) {
-      console.error('Failed to load fallback translations:', fallbackError);
-      // Return minimal translation object
-      return {
-        props: { 
-          t: { 
-            core: { 
-              completed: "Completed" 
-            } 
-          } 
-        },
-      };
+    const englishTranslations = (await import(`../../src/translations/en/index`)).default;
+    t = englishTranslations;
+    
+    // If locale is not English, try to load that locale
+    if (locale && locale !== 'en') {
+      try {
+        const localeTranslations = (await import(`../../src/translations/${locale}/index`)).default;
+        t = localeTranslations;
+      } catch (localeError) {
+        console.warn(`Locale ${locale} not found, falling back to English`);
+        // Keep using English translations
+      }
     }
+  } catch (error) {
+    console.error('Failed to load any translations:', error);
+    // Create minimal fallback
+    t = {
+      core: {
+        completed: "Completed"
+      }
+    };
   }
+
+  return {
+    props: { t },
+  };
 }
 
 export default MetricsRoute;
