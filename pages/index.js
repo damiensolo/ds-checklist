@@ -59,7 +59,7 @@ const HomeRoute = (props) => {
 };
 
 export async function getStaticProps() {
-  const translation = await import(`../src/translations/en/index`);
+  const translation = await import('../src/translations/en/index');
   return { props: { t: translation.default } };
 }
 
