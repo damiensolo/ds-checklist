@@ -158,7 +158,7 @@ const MetricsRoute = ({ t }) => {
             <Button text="Get started" />
           </Link>
         </Hero>
-        <ul className={s.content}>
+        <div className={s.list}>
           {metricsData.sections.map((sectionData) => {
             const sectionTranslations = metricsTranslations[sectionData.id];
             const total = sectionData.checklist.length;
@@ -167,8 +167,8 @@ const MetricsRoute = ({ t }) => {
             ).length;
 
             return (
-              <Link key={sectionData.id} href={`/metrics/${sectionData.id}`}>
-                <div className={s.sectionOverview}>
+              <div key={sectionData.id} className={s.listItem}>
+                <Link href={`/metrics/${sectionData.id}`} className={s.sectionOverview}>
                   <SectionTitle
                     title={sectionTranslations.title}
                     total={total}
@@ -179,11 +179,11 @@ const MetricsRoute = ({ t }) => {
                   <span className={s.arrowRight}>
                     <IconArrowRight />
                   </span>
-                </div>
-              </Link>
+                </Link>
+              </div>
             );
           })}
-        </ul>
+        </div>
       </div>
     </Layout>
   );
