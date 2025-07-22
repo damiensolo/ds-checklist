@@ -14,9 +14,10 @@ const nextConfig = {
     unoptimized: true
   },
   swcMinify: true,
-  output: 'standalone',
+  output: 'export',
   trailingSlash: false,
   poweredByHeader: false,
+  distDir: 'out',
 };
 
 module.exports = nextConfig;
