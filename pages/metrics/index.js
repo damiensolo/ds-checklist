@@ -3,11 +3,14 @@ import React from "react";
 import Hero from "../../src/components/Hero";
 import Layout from "../../src/components/Layout";
 import Button from "../../src/components/Button";
-import Section from "../../src/components/Section";
+import SectionTitle from "../../src/components/SectionTitle";
 import Link from "next/link";
+import { useCheckedIds } from "../../src/utilities/checklistsContext";
 import s from "./metrics.module.css";
 
 const MetricsRoute = ({ t }) => {
+  const { checkedIds } = useCheckedIds();
+
   const metricsData = {
     id: "metrics",
     sections: [
@@ -158,28 +161,23 @@ const MetricsRoute = ({ t }) => {
         <div className={s.sections}>
           {metricsData.sections.map((sectionData) => {
             const sectionTranslations = metricsTranslations[sectionData.id];
-            
-            // Transform the checklist items to match the expected structure
-            const checklistItems = sectionData.checklist.map(itemId => ({
-              id: itemId,
-              title: sectionTranslations[itemId].title,
-              description: sectionTranslations[itemId].description
-            }));
-            
-            const sectionForComponent = {
-              title: sectionTranslations.title,
-              id: sectionData.id,
-              description: sectionTranslations.description,
-              checklist: checklistItems,
-              resources: [] // Empty resources array since metrics don't have resources
-            };
+            const total = sectionData.checklist.length;
+            const completed = sectionData.checklist.filter((itemId) =>
+              checkedIds.includes(itemId)
+            ).length;
             
             return (
-              <Section
-                key={sectionData.id}
-                section={sectionForComponent}
-                completedLabel={t.core.completed}
-              />
+              <Link key={sectionData.id} href={`#${sectionData.id}`}>
+                <div className={s.sectionOverview}>
+                  <SectionTitle
+                    title={sectionTranslations.title}
+                    total={total}
+                    completed={completed}
+                    completedLabel={t.core.completed}
+                  />
+                  <p className={s.sectionDescription}>{sectionTranslations.description}</p>
+                </div>
+              </Link>
             );
           })}
         </div>
