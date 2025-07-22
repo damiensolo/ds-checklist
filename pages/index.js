@@ -59,19 +59,10 @@ const HomeRoute = (props) => {
 };
 
 export async function getStaticProps({ locale }) {
-  try {
-    const t = (await import(`../src/translations/${locale}/index`)).default;
-    return {
-      props: { t },
-    };
-  } catch (error) {
-    console.error('Error loading translations:', error);
-    // Fallback to English translations
-    const fallbackT = (await import(`../src/translations/en/index`)).default;
-    return {
-      props: { t: fallbackT },
-    };
-  }
+  const t = (await import(`../src/translations/${locale}/index`)).default;
+  return {
+    props: { t },
+  };
 }
 
 export default HomeRoute;
