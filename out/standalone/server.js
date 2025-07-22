@@ -31,7 +31,7 @@ server.listen(currentPort, (err) => {
     process.exit(1)
   }
   const nextServer = new NextServer({
-    hostname: 'localhost',
+    hostname: '0.0.0.0',
     port: currentPort,
     dir: path.join(__dirname),
     dev: false,

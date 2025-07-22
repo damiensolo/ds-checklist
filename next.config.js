@@ -18,6 +18,9 @@ const nextConfig = {
   trailingSlash: false,
   poweredByHeader: false,
   distDir: 'out',
+  experimental: {
+    outputStandalone: true,
+  },
 };
 
 module.exports = nextConfig;
