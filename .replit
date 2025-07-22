@@ -43,5 +43,6 @@ task = "shell.exec"
 args = "npm run dev"
 
 [deployment]
-run = ["sh", "-c", "cd out/standalone && HOST=0.0.0.0 PORT=3000 node server.js"]
 build = ["sh", "-c", "npm run build"]
+deploymentTarget = "static"
+publicDir = "public"
