@@ -11,13 +11,13 @@ import IconArrowRight from "../../src/icons/arrowRight";
 const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();
   
-  // Early return if translations are not loaded
-  if (!t) {
+  // Early return if translations are not loaded properly
+  if (!t || !t.core) {
     return (
       <Layout>
         <div className={s.container}>
           <h1>Design System Metrics</h1>
-          <p>Loading...</p>
+          <p>Loading translations...</p>
         </div>
       </Layout>
     );
