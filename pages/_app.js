@@ -16,7 +16,7 @@ const ScrollToTop = () => {
   return null;
 };
 
-const App = ({ Component, pageProps }) => {
+function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
@@ -49,7 +49,6 @@ const App = ({ Component, pageProps }) => {
           property="twitter:image"
           content="https://designsystemchecklist.com/meta-v2.png"
         />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
       <ThemeProvider>
         <ChecklistsProvider>
@@ -60,6 +59,6 @@ const App = ({ Component, pageProps }) => {
       </ThemeProvider>
     </>
   );
-};
+}
 
-export default App;
+export default MyApp;
