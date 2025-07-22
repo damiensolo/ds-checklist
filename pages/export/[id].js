@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useRouter } from "next/router";
 import Layout from "../../src/components/Layout";
@@ -50,9 +49,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
-  return {
-    props: {},
-  };
+  const translation = await import('../../src/translations/en/index');
+  return { props: { t: translation.default } };
 }
 
 export default ExportRoute;

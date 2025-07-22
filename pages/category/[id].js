@@ -49,9 +49,8 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps() {
-  return {
-    props: {},
-  };
+  const translation = await import('../../src/translations/en/index');
+  return { props: { t: translation.default } };
 }
 
 export default CategoryRoute;
