@@ -289,24 +289,22 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, locale }) {
-  try {
-    const t = (await import(`../../src/translations/${locale}/index`)).default;
+  // Simplified approach - use default translations
+  const t = {
+    core: {
+      completed: "Completed",
+      previous: "Previous",
+      next: "Next",
+      exportAction: "Export"
+    }
+  };
 
     return {
-      props: { 
-        t,
-        sectionId: params.id 
-      },
-    };
-  } catch (error) {
-    console.error("Failed to load translations:", error);
-    return {
-      props: {
-        t: null,
-        sectionId: params.id
-      }
-    };
-  }
+    props: { 
+      t,
+      sectionId: params.id 
+    },
+  };
 }
 
 export default MetricsSectionRoute;
