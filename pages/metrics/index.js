@@ -6,7 +6,7 @@ import Button from "../../src/components/Button";
 import SectionTitle from "../../src/components/SectionTitle";
 import Link from "next/link";
 import { useCheckedIds } from "../../src/utilities/checklistsContext";
-import s from "../category/category.module.css";
+import s from "./metrics.module.css";
 
 const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();

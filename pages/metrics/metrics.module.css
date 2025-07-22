@@ -1,13 +1,12 @@
+
 .container {
-  max-width: 800px;
+  max-width: var(--page-width);
   margin: 0 auto;
-  padding: 0 var(--spacing-24);
+  padding: var(--spacing-48);
 }
 
 .content {
-  display: grid;
-  grid-gap: var(--spacing-32);
-  margin: var(--spacing-48) 0 var(--spacing-80) 0;
+  margin: calc(var(--spacing-48) * 2) 0;
 }
 
 .sectionOverview {
@@ -19,11 +18,34 @@
   text-decoration: none;
   color: inherit;
   transition: all 0.2s ease;
+  margin-bottom: var(--spacing-32);
+  position: relative;
+}
+
+.sectionOverview:last-child {
+  margin-bottom: 0;
 }
 
 .sectionOverview:hover {
   border-color: var(--color-accent);
   transform: translateY(-2px);
+}
+
+.sectionOverview::after {
+  content: "→";
+  position: absolute;
+  right: var(--spacing-32);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.2s ease;
+  color: var(--color-accent);
+  font-size: 1.2em;
+}
+
+.sectionOverview:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) translateX(4px);
 }
 
 .sectionDescription {
@@ -32,12 +54,8 @@
   line-height: 1.5;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   .container {
-    padding: 0 var(--spacing-24);
-  }
-
-  .content {
-    margin: var(--spacing-32) 0 var(--spacing-48) 0;
+    padding: var(--spacing-32);
   }
 }
