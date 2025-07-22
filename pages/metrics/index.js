@@ -13,7 +13,14 @@ const MetricsRoute = ({ t }) => {
       {
         id: "business-financial",
         title: "Business & Financial Impact",
-        checklist: ["metrics-roi", "metrics-time-to-value", "metrics-cost-savings"]
+        checklist: [
+          "metrics-roi", 
+          "metrics-time-to-value", 
+          "metrics-cost-savings",
+          "metrics-conversion-rate",
+          "metrics-brand-reputation",
+          "metrics-company-scalability"
+        ]
       },
       {
         id: "adoption-engagement", 
@@ -45,15 +52,27 @@ const MetricsRoute = ({ t }) => {
       title: "Business & Financial Impact",
       "metrics-roi": {
         title: "Return on Investment (ROI)",
-        description: "Measure financial gains against the investment cost."
+        description: "Measure the overall financial gains of the design system against the cost of its investment."
       },
       "metrics-time-to-value": {
         title: "Time to Value", 
-        description: "Track the time from investment to measurable financial returns."
+        description: "Track the time from the initial investment to when the system begins delivering measurable returns, such as cost savings or revenue boosts."
       },
       "metrics-cost-savings": {
         title: "Cost Savings",
-        description: "Calculate savings from increased efficiency and reduced redundant work."
+        description: "Calculate savings from increased efficiency, reduced refactoring, and fewer design/development hours spent on redundant work."
+      },
+      "metrics-conversion-rate": {
+        title: "Conversion Rate Improvement",
+        description: "Analyze how a more consistent and usable interface impacts user conversion rates."
+      },
+      "metrics-brand-reputation": {
+        title: "Brand Reputation & Consistency",
+        description: "Track improvements in brand recognition and trust, driven by a consistent visual identity across all products."
+      },
+      "metrics-company-scalability": {
+        title: "Company Scalability",
+        description: "Measure the increase in team capacity and the ability to build and launch new products or features more quickly."
       }
     },
     "adoption-engagement": {
