@@ -3,6 +3,10 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
+  i18n: {
+    locales: ["en", "ko", "pt", "tr"],
+    defaultLocale: "en",
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -10,8 +14,10 @@ const nextConfig = {
     unoptimized: true
   },
   swcMinify: true,
+  output: 'export',
   trailingSlash: false,
   poweredByHeader: false,
+  distDir: 'out',
 };
 
 module.exports = nextConfig;
