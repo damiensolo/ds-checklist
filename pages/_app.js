@@ -1,19 +1,13 @@
+
 import React from "react";
 import Head from "next/head";
 import { Analytics } from "@vercel/analytics/react";
 import { ChecklistsProvider } from "../src/utilities/checklistsContext";
 import { ThemeProvider } from "../src/utilities/themeContext";
-import "../pages/app.css";
-
-// ScrollToTop component
-const ScrollToTop = () => {
-  React.useEffect(() => {
-    if (typeof window !== 'undefined') {
-      window.scrollTo(0, 0);
-    }
-  }, []);
-  return null;
-};
+import "../src/assets/styles/reset.css";
+import "../src/assets/styles/variables.css";
+import "../src/assets/fonts/sneak.css";
+import "./app.css";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -51,7 +45,6 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <ThemeProvider>
         <ChecklistsProvider>
-          <ScrollToTop />
           <Component {...pageProps} />
           <Analytics />
         </ChecklistsProvider>
