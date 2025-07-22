@@ -6,7 +6,7 @@ import Button from "../../src/components/Button";
 import SectionTitle from "../../src/components/SectionTitle";
 import Link from "next/link";
 import { useCheckedIds } from "../../src/utilities/checklistsContext";
-import s from "./metrics.module.css";
+import s from "../category/category.module.css";
 
 const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();
@@ -154,11 +154,11 @@ const MetricsRoute = ({ t }) => {
           title={metricsTranslations.title}
           subtitle={metricsTranslations.description}
         >
-          <Link href="#business-financial">
+          <Link href="/metrics/business-financial">
             <Button text="Get started" />
           </Link>
         </Hero>
-        <div className={s.sections}>
+        <div className={s.content}>
           {metricsData.sections.map((sectionData) => {
             const sectionTranslations = metricsTranslations[sectionData.id];
             const total = sectionData.checklist.length;
@@ -167,7 +167,7 @@ const MetricsRoute = ({ t }) => {
             ).length;
             
             return (
-              <Link key={sectionData.id} href={`#${sectionData.id}`}>
+              <Link key={sectionData.id} href={`/metrics/${sectionData.id}`}>
                 <div className={s.sectionOverview}>
                   <SectionTitle
                     title={sectionTranslations.title}
