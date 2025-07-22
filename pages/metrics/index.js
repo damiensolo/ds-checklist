@@ -155,9 +155,7 @@ const MetricsRoute = ({ t }) => {
           subtitle={metricsTranslations.description}
         >
           <Link href="/metrics/business-financial">
-            <a>
-              <Button text="Get started" />
-            </a>
+            <Button text="Get started" />
           </Link>
         </Hero>
         <div className={s.list}>
@@ -169,9 +167,9 @@ const MetricsRoute = ({ t }) => {
             ).length;
 
             return (
-              <div key={sectionData.id} className={s.listItem}>
-                <Link href={`/metrics/${sectionData.id}`}>
-                  <a className={s.sectionOverview}>
+              <Link key={sectionData.id} href={`/metrics/${sectionData.id}`}>
+                <div className={s.listItem}>
+                  <div className={s.sectionOverview}>
                     <SectionTitle
                       title={sectionTranslations.title}
                       total={total}
@@ -182,9 +180,9 @@ const MetricsRoute = ({ t }) => {
                     <span className={s.arrowRight}>
                       <IconArrowRight />
                     </span>
-                  </a>
-                </Link>
-              </div>
+                  </div>
+                </div>
+              </Link>
             );
           })}
         </div>
