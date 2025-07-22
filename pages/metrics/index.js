@@ -11,17 +11,8 @@ import IconArrowRight from "../../src/icons/arrowRight";
 const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();
   
-  // Early return if translations are not loaded properly
-  if (!t || !t.core) {
-    return (
-      <Layout>
-        <div className={s.container}>
-          <h1>Design System Metrics</h1>
-          <p>Loading translations...</p>
-        </div>
-      </Layout>
-    );
-  }
+  // Provide fallback if translations are not loaded
+  const safeT = t || { core: { completed: "Completed" } };
 
   const metricsData = {
     id: "metrics",
@@ -215,32 +206,8 @@ const MetricsRoute = ({ t }) => {
     }
   };
 
-  // Handle missing translations gracefully
-  if (!t || !t.core) {
-    return (
-      <Layout>
-        <div className={s.container}>
-          <h1>Metrics</h1>
-          <p>Loading translations...</p>
-        </div>
-      </Layout>
-    );
-  }
-
-  // Ensure metricsData exists
-  if (!metricsData || !metricsData.sections) {
-    return (
-      <Layout>
-        <div className={s.container}>
-          <h1>Metrics</h1>
-          <p>Loading metrics data...</p>
-        </div>
-      </Layout>
-    );
-  }
-
   return (
-    <Layout t={t}>
+    <Layout t={safeT}>
       <div className={s.container}>
         <Hero 
           title={metricsTranslations.title}
@@ -266,7 +233,7 @@ const MetricsRoute = ({ t }) => {
                       title={sectionTranslations.title}
                       total={total}
                       completed={completed}
-                      completedLabel={t.core.completed}
+                      completedLabel={safeT.core.completed}
                     />
                     <p className={s.sectionDescription}>{sectionTranslations.description}</p>
                     <span className={s.arrowRight}>
