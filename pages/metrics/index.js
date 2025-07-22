@@ -2,8 +2,9 @@
 import React from "react";
 import Hero from "../../src/components/Hero";
 import Layout from "../../src/components/Layout";
-import Checklist from "../../src/components/Checklist";
+import Button from "../../src/components/Button";
 import Section from "../../src/components/Section";
+import Link from "next/link";
 import s from "./metrics.module.css";
 
 const MetricsRoute = ({ t }) => {
@@ -13,6 +14,7 @@ const MetricsRoute = ({ t }) => {
       {
         id: "business-financial",
         title: "Business & Financial Impact",
+        description: "Metrics that connect the design system directly to financial and strategic business goals.",
         checklist: [
           "metrics-roi", 
           "metrics-time-to-value", 
@@ -25,21 +27,25 @@ const MetricsRoute = ({ t }) => {
       {
         id: "adoption-engagement", 
         title: "Adoption & Engagement",
+        description: "Track how teams and products are adopting and engaging with your design system.",
         checklist: ["metrics-adoption-rate", "metrics-component-usage", "metrics-contributions"]
       },
       {
         id: "product-design-efficiency",
         title: "Product & Design Efficiency", 
+        description: "Measure improvements in design and product development workflows.",
         checklist: ["metrics-time-to-market", "metrics-prototype-speed"]
       },
       {
         id: "development-efficiency",
         title: "Development & Engineering Efficiency",
+        description: "Track improvements in development speed and engineering workflows.",
         checklist: ["metrics-handoff-time", "metrics-task-completion", "metrics-tech-debt"]
       },
       {
         id: "quality-ux",
         title: "Quality & User Experience",
+        description: "Monitor the impact on product quality and user experience.",
         checklist: ["metrics-ui-consistency", "metrics-accessibility", "metrics-support-tickets"]
       }
     ]
@@ -50,6 +56,7 @@ const MetricsRoute = ({ t }) => {
     description: "Measure the impact and effectiveness of your design system with these key performance indicators and metrics.",
     "business-financial": {
       title: "Business & Financial Impact",
+      description: "Metrics that connect the design system directly to financial and strategic business goals.",
       "metrics-roi": {
         title: "Return on Investment (ROI)",
         description: "Measure the overall financial gains of the design system against the cost of its investment."
@@ -77,6 +84,7 @@ const MetricsRoute = ({ t }) => {
     },
     "adoption-engagement": {
       title: "Adoption & Engagement",
+      description: "Track how teams and products are adopting and engaging with your design system.",
       "metrics-adoption-rate": {
         title: "Adoption Rate",
         description: "Calculate the percentage of products/teams using the design system."
@@ -92,6 +100,7 @@ const MetricsRoute = ({ t }) => {
     },
     "product-design-efficiency": {
       title: "Product & Design Efficiency",
+      description: "Measure improvements in design and product development workflows.",
       "metrics-time-to-market": {
         title: "Time to Market",
         description: "Measure reduction in time from idea to launched feature."
@@ -103,6 +112,7 @@ const MetricsRoute = ({ t }) => {
     },
     "development-efficiency": {
       title: "Development & Engineering Efficiency",
+      description: "Track improvements in development speed and engineering workflows.",
       "metrics-handoff-time": {
         title: "Design-to-Development Handoff Time",
         description: "Measure the speed and efficiency of the handoff process."
@@ -118,6 +128,7 @@ const MetricsRoute = ({ t }) => {
     },
     "quality-ux": {
       title: "Quality & User Experience",
+      description: "Monitor the impact on product quality and user experience.",
       "metrics-ui-consistency": {
         title: "UI Consistency",
         description: "Measure the reduction in visual inconsistencies and UI bugs."
@@ -139,7 +150,11 @@ const MetricsRoute = ({ t }) => {
         <Hero 
           title={metricsTranslations.title}
           subtitle={metricsTranslations.description}
-        />
+        >
+          <Link href="#business-financial">
+            <Button text="Get started" />
+          </Link>
+        </Hero>
         <div className={s.sections}>
           {metricsData.sections.map((sectionData) => {
             const sectionTranslations = metricsTranslations[sectionData.id];
@@ -151,13 +166,20 @@ const MetricsRoute = ({ t }) => {
               description: sectionTranslations[itemId].description
             }));
             
+            const sectionForComponent = {
+              title: sectionTranslations.title,
+              id: sectionData.id,
+              description: sectionTranslations.description,
+              checklist: checklistItems,
+              resources: [] // Empty resources array since metrics don't have resources
+            };
+            
             return (
-              <div key={sectionData.id} id={sectionData.id} className={s.section}>
-                <h2 className={s.sectionTitle}>{sectionTranslations.title}</h2>
-                <Checklist
-                  checklist={checklistItems}
-                />
-              </div>
+              <Section
+                key={sectionData.id}
+                section={sectionForComponent}
+                completedLabel={t.core.completed}
+              />
             );
           })}
         </div>
