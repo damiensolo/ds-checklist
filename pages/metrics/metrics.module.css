@@ -1,4 +1,3 @@
-
 .container {
   width: 100%;
   max-width: 800px;
@@ -17,12 +16,34 @@
   .container {
     padding: 0 24px;
   }
-  
+
   .sections {
     margin-top: 32px;
   }
-  
+
   .sections > * + * {
     margin-top: 32px;
   }
+}
+
+.sections {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.section {
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.section:last-child {
+  border-bottom: none;
+}
+
+.sectionTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--color-text-primary);
 }

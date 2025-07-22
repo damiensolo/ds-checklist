@@ -122,20 +122,17 @@ const MetricsRoute = ({ t }) => {
           subtitle={metricsTranslations.description}
         />
         <div className={s.sections}>
-          {metricsData.sections.map((section) => {
-            const sectionTranslations = metricsTranslations[section.id];
+          {metricsData.sections.map((sectionData) => {
+            const sectionTranslations = metricsTranslations[sectionData.id];
             
             return (
-              <Section
-                key={section.id}
-                title={sectionTranslations.title}
-                id={section.id}
-              >
+              <div key={sectionData.id} id={sectionData.id} className={s.section}>
+                <h2 className={s.sectionTitle}>{sectionTranslations.title}</h2>
                 <Checklist
-                  items={section.checklist}
+                  items={sectionData.checklist}
                   translations={sectionTranslations}
                 />
-              </Section>
+              </div>
             );
           })}
         </div>
