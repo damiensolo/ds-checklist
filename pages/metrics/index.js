@@ -250,17 +250,33 @@ const MetricsRoute = ({ t }) => {
   );
 };
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale = 'en' }) {
   try {
     const t = (await import(`../../src/translations/${locale}/index`)).default;
     return {
       props: { t },
     };
   } catch (error) {
-    console.error('Failed to load translations:', error);
-    return {
-      props: { t: null },
-    };
+    console.error('Failed to load translations for locale:', locale, error);
+    // Fallback to English translations
+    try {
+      const fallbackT = (await import(`../../src/translations/en/index`)).default;
+      return {
+        props: { t: fallbackT },
+      };
+    } catch (fallbackError) {
+      console.error('Failed to load fallback translations:', fallbackError);
+      // Return minimal translation object
+      return {
+        props: { 
+          t: { 
+            core: { 
+              completed: "Completed" 
+            } 
+          } 
+        },
+      };
+    }
   }
 }
 
