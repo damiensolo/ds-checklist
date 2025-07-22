@@ -19,6 +19,14 @@ const nextConfig = {
     unoptimized: true
   },
   swcMinify: true,
+  async rewrites() {
+    return [
+      {
+        source: '/health',
+        destination: '/api/health',
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;
