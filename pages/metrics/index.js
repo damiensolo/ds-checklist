@@ -203,6 +203,30 @@ const MetricsRoute = ({ t }) => {
     }
   };
 
+  // Handle missing translations gracefully
+  if (!t || !t.core) {
+    return (
+      <Layout>
+        <div className={s.container}>
+          <h1>Metrics</h1>
+          <p>Loading translations...</p>
+        </div>
+      </Layout>
+    );
+  }
+
+  // Ensure metricsData exists
+  if (!metricsData || !metricsData.sections) {
+    return (
+      <Layout>
+        <div className={s.container}>
+          <h1>Metrics</h1>
+          <p>Loading metrics data...</p>
+        </div>
+      </Layout>
+    );
+  }
+
   return (
     <Layout t={t}>
       <div className={s.container}>
