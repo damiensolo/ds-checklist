@@ -58,8 +58,8 @@ const HomeRoute = (props) => {
   );
 };
 
-export async function getStaticProps({ locale = 'en' }) {
-  const translation = await import(`../src/translations/${locale || 'en'}/index`);
+export async function getStaticProps() {
+  const translation = await import(`../src/translations/en/index`);
   return { props: { t: translation.default } };
 }
 
