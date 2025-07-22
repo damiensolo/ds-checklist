@@ -5,11 +5,11 @@ import s from './Checklist.module.css';
 const Checklist = ({ checklist }) => {
   return (
     <ul className={s.container}>
-      {checklist.map(item => (
+      {checklist.map((item, index) => (
         <ChecklistItem
           title={item.title}
           id={item.id}
-          key={item.title}
+          key={item.id || index}
           description={item.description}
         />
       ))}

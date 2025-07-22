@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "../../src/components/Layout";
 import Hero from "../../src/components/Hero";
@@ -211,9 +210,16 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
 
   const section = metricsData.sections.find(s => s.id === sectionId);
   const sectionTranslations = metricsTranslations[sectionId];
-  
-  if (!section || !sectionTranslations) {
-    return null;
+
+  if (!section || !sectionTranslations || !t || !t.core) {
+    return (
+      <Layout>
+        <div className={s.container}>
+          <h1>Loading...</h1>
+          <p>Translation or section data missing.</p>
+        </div>
+      </Layout>
+    );
   }
 
   const currentIndex = metricsData.sections.findIndex(s => s.id === sectionId);
@@ -283,14 +289,24 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, locale }) {
-  const t = (await import(`../../src/translations/${locale}/index`)).default;
+  try {
+    const t = (await import(`../../src/translations/${locale}/index`)).default;
 
-  return {
-    props: { 
-      t,
-      sectionId: params.id 
-    },
-  };
+    return {
+      props: { 
+        t,
+        sectionId: params.id 
+      },
+    };
+  } catch (error) {
+    console.error("Failed to load translations:", error);
+    return {
+      props: {
+        t: null,
+        sectionId: params.id
+      }
+    };
+  }
 }
 
 export default MetricsSectionRoute;
