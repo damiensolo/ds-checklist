@@ -1,4 +1,3 @@
-
 import React from "react";
 import Hero from "../../src/components/Hero";
 import Layout from "../../src/components/Layout";
@@ -7,6 +6,7 @@ import SectionTitle from "../../src/components/SectionTitle";
 import Link from "next/link";
 import { useCheckedIds } from "../../src/utilities/checklistsContext";
 import s from "./metrics.module.css";
+import IconArrowRight from "../../src/icons/arrowRight";
 
 const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();
@@ -165,7 +165,7 @@ const MetricsRoute = ({ t }) => {
             const completed = sectionData.checklist.filter((itemId) =>
               checkedIds.includes(itemId)
             ).length;
-            
+
             return (
               <Link key={sectionData.id} href={`/metrics/${sectionData.id}`}>
                 <div className={s.sectionOverview}>
@@ -176,6 +176,9 @@ const MetricsRoute = ({ t }) => {
                     completedLabel={t.core.completed}
                   />
                   <p className={s.sectionDescription}>{sectionTranslations.description}</p>
+                  <span className={s.arrowRight}>
+                    <IconArrowRight />
+                  </span>
                 </div>
               </Link>
             );

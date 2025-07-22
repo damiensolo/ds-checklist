@@ -6,47 +6,45 @@
 }
 
 .content {
-  margin: calc(var(--spacing-48) * 2) 0;
-  padding: 0;
+  margin: calc(var(--spacing-48) * 2) 0 calc(var(--spacing-48) * 3);
+  padding: 0 calc(var(--spacing-48) + var(--spacing-4));
 }
 
 .sectionOverview {
+  position: relative;
+  width: 100%;
   display: block;
+  margin-bottom: var(--spacing-24);
+  border-radius: 8px;
   padding: var(--spacing-32);
   border: 1px solid var(--color-border);
-  border-radius: var(--border-radius);
   background: var(--color-background-secondary);
   text-decoration: none;
   color: inherit;
-  transition: all 0.2s ease;
-  margin-bottom: var(--spacing-32);
-  position: relative;
+  cursor: pointer;
 }
 
-.sectionOverview:last-child {
-  margin-bottom: 0;
+.sectionOverview:first-child {
+  margin-top: 0;
 }
 
-.sectionOverview:hover {
-  border-color: var(--color-accent);
-  transform: translateY(-2px);
-}
-
-.sectionOverview::after {
-  content: "→";
-  position: absolute;
-  right: var(--spacing-32);
-  top: 50%;
-  transform: translateY(-50%);
-  opacity: 0;
-  transition: all 0.2s ease;
-  color: var(--color-accent);
-  font-size: 1.2em;
-}
-
-.sectionOverview:hover::after {
+.sectionOverview:hover .arrowRight {
   opacity: 1;
-  transform: translateY(-50%) translateX(4px);
+  transform: translate(0, -50%) translateZ(0);
+}
+
+.arrowRight {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(-12px, -50%) translateZ(0);
+  opacity: 0;
+  transition: transform var(--transition) ease-in-out,
+    opacity var(--transition) ease-in-out;
+}
+
+.arrowRight path {
+  fill: currentColor;
 }
 
 .sectionDescription {
