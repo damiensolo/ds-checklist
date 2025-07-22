@@ -1,0 +1,28 @@
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.sections {
+  margin-top: 48px;
+}
+
+.sections > * + * {
+  margin-top: 48px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 24px;
+  }
+  
+  .sections {
+    margin-top: 32px;
+  }
+  
+  .sections > * + * {
+    margin-top: 32px;
+  }
+}

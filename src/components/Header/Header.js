@@ -49,6 +49,16 @@ const Header = ({ t }) => {
         <nav className={s.nav}>
           <ul className={s.menu}>
             <li className={s.item}>
+              <a href="/" onClick={(e) => navigate(e, "/")} className={router.pathname === "/" ? s.active : ""}>
+                Checklist
+              </a>
+            </li>
+            <li className={s.item}>
+              <a href="/metrics" onClick={(e) => navigate(e, "/metrics")} className={router.pathname === "/metrics" ? s.active : ""}>
+                Measure
+              </a>
+            </li>
+            <li className={s.item}>
               <a href="/about" onClick={(e) => navigate(e, "/about")}>
                 {t.core.about}
               </a>
