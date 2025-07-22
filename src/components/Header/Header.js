@@ -50,7 +50,7 @@ const Header = ({ t }) => {
           <ul className={s.menu}>
             <li className={s.item}>
               <a href="/" onClick={(e) => navigate(e, "/")} className={router.pathname === "/" ? s.active : ""}>
-                Checklist
+                Build
               </a>
             </li>
             <li className={s.item}>
