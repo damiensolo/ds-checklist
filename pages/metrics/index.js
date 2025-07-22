@@ -8,21 +8,18 @@ import { useCheckedIds } from "../../src/utilities/checklistsContext";
 import s from "./metrics.module.css";
 import IconArrowRight from "../../src/icons/arrowRight";
 
-const MetricsRoute = ({ t }) => {
+const MetricsRoute = () => {
   const { checkedIds } = useCheckedIds();
 
-  // Create a robust fallback translation object
-  const defaultTranslations = {
+  // Define translations directly in the component
+  const t = {
     core: {
       completed: "Completed",
-      previous: "Previous", 
+      previous: "Previous",
       next: "Next",
       exportAction: "Export"
     }
   };
-
-  // Ensure we always have valid translations
-  const safeT = (t && t.core) ? t : defaultTranslations;
 
   const metricsData = {
     id: "metrics",
@@ -93,7 +90,7 @@ const MetricsRoute = ({ t }) => {
   };
 
   return (
-    <Layout t={safeT}>
+    <Layout t={t}>
       <div className={s.container}>
         <Hero 
           title={metricsTranslations.title}
@@ -119,7 +116,7 @@ const MetricsRoute = ({ t }) => {
                       title={sectionTranslations.title}
                       total={total}
                       completed={completed}
-                      completedLabel={safeT.core.completed}
+                      completedLabel={t.core.completed}
                     />
                     <p className={s.sectionDescription}>{sectionTranslations.description}</p>
                     <span className={s.arrowRight}>
@@ -135,23 +132,5 @@ const MetricsRoute = ({ t }) => {
     </Layout>
   );
 };
-
-export async function getStaticProps({ locale }) {
-  // Simplified approach - just return default English translations for now
-  const defaultTranslations = {
-    core: {
-      completed: "Completed",
-      previous: "Previous",
-      next: "Next", 
-      exportAction: "Export"
-    }
-  };
-
-  return {
-    props: { 
-      t: defaultTranslations 
-    },
-  };
-}
 
 export default MetricsRoute;
