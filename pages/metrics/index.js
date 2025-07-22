@@ -41,87 +41,75 @@ const MetricsRoute = ({ t }) => {
   const metricsTranslations = {
     title: "Design System Metrics",
     description: "Measure the impact and effectiveness of your design system with these key performance indicators and metrics.",
-    sections: {
-      "business-financial": {
-        title: "Business & Financial Impact",
-        items: {
-          "metrics-roi": {
-            title: "Return on Investment (ROI)",
-            description: "Measure financial gains against the investment cost."
-          },
-          "metrics-time-to-value": {
-            title: "Time to Value", 
-            description: "Track the time from investment to measurable financial returns."
-          },
-          "metrics-cost-savings": {
-            title: "Cost Savings",
-            description: "Calculate savings from increased efficiency and reduced redundant work."
-          }
-        }
+    "business-financial": {
+      title: "Business & Financial Impact",
+      "metrics-roi": {
+        title: "Return on Investment (ROI)",
+        description: "Measure financial gains against the investment cost."
       },
-      "adoption-engagement": {
-        title: "Adoption & Engagement",
-        items: {
-          "metrics-adoption-rate": {
-            title: "Adoption Rate",
-            description: "Calculate the percentage of products/teams using the design system."
-          },
-          "metrics-component-usage": {
-            title: "Component & Library Usage",
-            description: "Track frequency and usage stats from design tools (e.g., Figma)."
-          },
-          "metrics-contributions": {
-            title: "Contributions to the System",
-            description: "Monitor contributions (new components, fixes) from various teams."
-          }
-        }
+      "metrics-time-to-value": {
+        title: "Time to Value", 
+        description: "Track the time from investment to measurable financial returns."
       },
-      "product-design-efficiency": {
-        title: "Product & Design Efficiency",
-        items: {
-          "metrics-time-to-market": {
-            title: "Time to Market",
-            description: "Measure reduction in time from idea to launched feature."
-          },
-          "metrics-prototype-speed": {
-            title: "Prototype Speed", 
-            description: "Track acceleration in creating and testing new prototypes."
-          }
-        }
+      "metrics-cost-savings": {
+        title: "Cost Savings",
+        description: "Calculate savings from increased efficiency and reduced redundant work."
+      }
+    },
+    "adoption-engagement": {
+      title: "Adoption & Engagement",
+      "metrics-adoption-rate": {
+        title: "Adoption Rate",
+        description: "Calculate the percentage of products/teams using the design system."
       },
-      "development-efficiency": {
-        title: "Development & Engineering Efficiency",
-        items: {
-          "metrics-handoff-time": {
-            title: "Design-to-Development Handoff Time",
-            description: "Measure the speed and efficiency of the handoff process."
-          },
-          "metrics-task-completion": {
-            title: "Average Task Completion Time",
-            description: "Compare developer time spent on UI tasks before and after."
-          },
-          "metrics-tech-debt": {
-            title: "Reduction in Technical Debt",
-            description: "Track the decrease in UI-related tech debt through component reuse."
-          }
-        }
+      "metrics-component-usage": {
+        title: "Component & Library Usage",
+        description: "Track frequency and usage stats from design tools (e.g., Figma)."
       },
-      "quality-ux": {
-        title: "Quality & User Experience",
-        items: {
-          "metrics-ui-consistency": {
-            title: "UI Consistency",
-            description: "Measure the reduction in visual inconsistencies and UI bugs."
-          },
-          "metrics-accessibility": {
-            title: "Accessibility Score/Issues",
-            description: "Track improvements in accessibility audit scores and fewer bugs."
-          },
-          "metrics-support-tickets": {
-            title: "Support Ticket Reduction",
-            description: "Track the decrease in UI-related support tickets."
-          }
-        }
+      "metrics-contributions": {
+        title: "Contributions to the System",
+        description: "Monitor contributions (new components, fixes) from various teams."
+      }
+    },
+    "product-design-efficiency": {
+      title: "Product & Design Efficiency",
+      "metrics-time-to-market": {
+        title: "Time to Market",
+        description: "Measure reduction in time from idea to launched feature."
+      },
+      "metrics-prototype-speed": {
+        title: "Prototype Speed", 
+        description: "Track acceleration in creating and testing new prototypes."
+      }
+    },
+    "development-efficiency": {
+      title: "Development & Engineering Efficiency",
+      "metrics-handoff-time": {
+        title: "Design-to-Development Handoff Time",
+        description: "Measure the speed and efficiency of the handoff process."
+      },
+      "metrics-task-completion": {
+        title: "Average Task Completion Time",
+        description: "Compare developer time spent on UI tasks before and after."
+      },
+      "metrics-tech-debt": {
+        title: "Reduction in Technical Debt",
+        description: "Track the decrease in UI-related tech debt through component reuse."
+      }
+    },
+    "quality-ux": {
+      title: "Quality & User Experience",
+      "metrics-ui-consistency": {
+        title: "UI Consistency",
+        description: "Measure the reduction in visual inconsistencies and UI bugs."
+      },
+      "metrics-accessibility": {
+        title: "Accessibility Score/Issues",
+        description: "Track improvements in accessibility audit scores and fewer bugs."
+      },
+      "metrics-support-tickets": {
+        title: "Support Ticket Reduction",
+        description: "Track the decrease in UI-related support tickets."
       }
     }
   };
@@ -135,7 +123,7 @@ const MetricsRoute = ({ t }) => {
         />
         <div className={s.sections}>
           {metricsData.sections.map((section) => {
-            const sectionTranslations = metricsTranslations.sections[section.id];
+            const sectionTranslations = metricsTranslations[section.id];
             
             return (
               <Section
@@ -145,7 +133,7 @@ const MetricsRoute = ({ t }) => {
               >
                 <Checklist
                   items={section.checklist}
-                  translations={sectionTranslations.items}
+                  translations={sectionTranslations}
                 />
               </Section>
             );
