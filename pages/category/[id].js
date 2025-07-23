@@ -105,20 +105,11 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ locale }) {
-  const targetLocale = locale || 'en';
-  try {
-    const t = (await import(`../../src/translations/${targetLocale}/index`)).default;
-    return {
-      props: { t },
-    };
-  } catch (error) {
-    console.error(`Failed to load translations for locale: ${targetLocale}`, error);
-    // Fallback to English translations
-    const t = (await import(`../../src/translations/en/index`)).default;
-    return {
-      props: { t },
-    };
-  }
+  const t = (await import(`../../src/translations/${locale}/index`)).default;
+
+  return {
+    props: { t },
+  };
 }
 
 export default CategoryRoute;

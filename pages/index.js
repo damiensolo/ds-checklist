@@ -27,18 +27,19 @@ const HomeRoute = (props) => {
     });
 
     return (
-      <Link 
-        key={item.id} 
-        href={`/category/${item.id}`}
-        className={s.listItem}
-      >
-        <div className={s.sectionOverview}>
-          <h3>{t?.[item.id]?.title}</h3>
-          <p className={s.sectionDescription}></p>
-          <span className={s.arrowRight}>
+      <Link href={`/category/${item.id}/`} key={item.id}>
+        <a className={s.listItem}>
+          <SectionTitle
+            title={t?.[item.id]?.title}
+            key={item.id}
+            total={total}
+            completed={completed}
+            completedLabel={t.core.completed}
+          />
+          <div className={s.arrowRight}>
             <ArrowRightIcon />
-          </span>
-        </div>
+          </div>
+        </a>
       </Link>
     );
   };
@@ -58,20 +59,11 @@ const HomeRoute = (props) => {
 };
 
 export async function getStaticProps({ locale }) {
-  const targetLocale = locale || 'en';
-  try {
-    const t = (await import(`../src/translations/${targetLocale}/index`)).default;
-    return {
-      props: { t },
-    };
-  } catch (error) {
-    console.error(`Failed to load translations for locale: ${targetLocale}`, error);
-    // Fallback to English translations
-    const t = (await import(`../src/translations/en/index`)).default;
-    return {
-      props: { t },
-    };
-  }
+  const t = (await import(`../src/translations/${locale}/index`)).default;
+
+  return {
+    props: { t },
+  };
 }
 
 export default HomeRoute;

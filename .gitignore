@@ -1,6 +1,5 @@
 # Dependencies
 .next
-.next/cache
 .idea
 
 /node_modules

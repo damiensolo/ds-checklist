@@ -32,7 +32,7 @@ const Header = ({ t }) => {
   return (
     <header className={s.container}>
       <span className={s.logo}>
-        <Link href="/" className={s.logo}>
+        <Link href="/">
           <img 
             src="/sd-logo.png" 
             alt="SD Logo" 
@@ -49,24 +49,24 @@ const Header = ({ t }) => {
         <nav className={s.nav}>
           <ul className={s.menu}>
             <li className={s.item}>
-              <Link href="/" className={router.pathname === "/" ? s.active : ""}>
-                Build
-              </Link>
+              <a href="/" onClick={(e) => navigate(e, "/")} className={router.pathname === "/" ? s.active : ""}>
+                Checklist
+              </a>
             </li>
             <li className={s.item}>
-              <Link href="/metrics" className={router.pathname === "/metrics" ? s.active : ""}>
+              <a href="/metrics" onClick={(e) => navigate(e, "/metrics")} className={router.pathname === "/metrics" ? s.active : ""}>
                 Measure
-              </Link>
+              </a>
             </li>
             <li className={s.item}>
-              <Link href="/about">
-                {t?.core?.about || "About"}
-              </Link>
+              <a href="/about" onClick={(e) => navigate(e, "/about")}>
+                {t.core.about}
+              </a>
             </li>
             <li className={s.item}>
-              <Link href="/share">
-                {t?.core?.share || "Share"}
-              </Link>
+              <a href="/share" onClick={(e) => navigate(e, "/share")}>
+                {t.core.share}
+              </a>
             </li>
           </ul>
         </nav>
