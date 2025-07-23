@@ -268,9 +268,10 @@ export async function getStaticPaths() {
   return {
     paths: [
       "/metrics/adoption-engagement",
-      "/metrics/business-financial",
+      "/metrics/business-financial", 
       "/metrics/development-efficiency",
       "/metrics/product-design-efficiency",
+      "/metrics/quality-ux",
     ],
     fallback: false,
   };
@@ -278,6 +279,13 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params }) {
   const t = (await import('../../src/translations/en/index')).default;
+
+  return {
+    props: { 
+      t,
+      sectionId: params.id 
+    },
+  };
 }
 
 export default MetricsSectionRoute;
