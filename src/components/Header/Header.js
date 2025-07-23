@@ -53,7 +53,7 @@ const Header = ({ t }) => {
                 className={router.pathname === "/" ? s.active : ""}
                 onClick={closeMenu}
               >
-                Checklist
+                Build
               </Link>
             </li>
             <li className={s.item}>
