@@ -3,36 +3,75 @@ export default {
   "design-language": {
     title: "Design Language",
     description: "Like any language, design language is a methodical way of communicating with your audience through your product design approach. Economical user experience design provides a recognizable and understandable UI to guide users through tasks and take meaningful action.",
-    checklist: {
-      "dl-foundations-purpose": {
-        title: "Purpose",
-        description: "Clearly define why the design system exists and its purpose for both designers and developers."
+    sections: {
+      "dl-brand": {
+        title: "Brand",
+        description: "Define your brand foundation and values",
+        checklist: {
+          "dl-brand-vision": {
+            title: "Vision",
+            description: "A shared vision clarifies direction and brings your team together."
+          },
+          "dl-brand-principles": {
+            title: "Design Principles",
+            description: "Establish design principles to guide decisions when creating the design system."
+          },
+          "dl-brand-tone": {
+            title: "Tone of Voice",
+            description: "Define how your brand communicates with users."
+          },
+          "dl-brand-terminology": {
+            title: "Terminology",
+            description: "Establish consistent terminology across your design system."
+          },
+          "dl-brand-assets": {
+            title: "Brand Assets",
+            description: "Organize and maintain brand assets like logos, colors, and imagery."
+          }
+        }
       },
-      "dl-foundations-vision": {
-        title: "Vision", 
-        description: "A shared vision clarifies direction and brings your team together."
-      },
-      "dl-foundations-shared-values": {
-        title: "Shared Values",
-        description: "Establish shared values to guide decisions when creating the design system."
-      },
-      "dl-foundations-brand-values": {
-        title: "Brand Values & Attributes",
-        description: "Identify your brand values and attributes to express them in the design system."
+      "dl-guidelines": {
+        title: "Guidelines",
+        description: "Establish comprehensive guidelines for your design system",
+        checklist: {
+          "dl-guidelines-a11y": {
+            title: "Accessibility Guidelines",
+            description: "Define accessibility standards and requirements."
+          },
+          "dl-guidelines-writing": {
+            title: "Writing Guidelines",
+            description: "Establish consistent writing and content guidelines."
+          },
+          "dl-guidelines-microcopy": {
+            title: "Microcopy Guidelines",
+            description: "Define standards for UI copy and microcopy."
+          },
+          "dl-guidelines-terminology": {
+            title: "Terminology Guidelines",
+            description: "Maintain consistent terminology across products."
+          },
+          "dl-guidelines-i18n": {
+            title: "Internationalization",
+            description: "Plan for international and multi-language support."
+          }
+        }
       }
     }
   },
   foundations: {
     title: "Design Foundations",
-    description: "Design foundations are the visual elements needed to create digital interfaces. They include color, layout, iconography, typography, and illustration."
+    description: "Design foundations are the visual elements needed to create digital interfaces. They include color, layout, iconography, typography, and illustration.",
+    sections: {}
   },
   components: {
     title: "Components",
-    description: "Components are the building blocks of your design system. They're reusable UI elements that help create consistent user experiences."
+    description: "Components are the building blocks of your design system. They're reusable UI elements that help create consistent user experiences.",
+    sections: {}
   },
   maintenance: {
     title: "Maintenance",
-    description: "Design systems require ongoing maintenance to stay relevant and useful for your organization."
+    description: "Design systems require ongoing maintenance to stay relevant and useful for your organization.",
+    sections: {}
   },
   core: {
     heroTitle: "Build better design systems",
