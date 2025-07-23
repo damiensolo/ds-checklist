@@ -67,21 +67,13 @@
 
 /* Light mode */
 :root[data-theme="light"] {
-  --color-background: #ffffff;
-  --color-background-secondary: #f8f9fa;
-  --color-surface: #ffffff;
-  --color-text: #2d3748;
-  --color-text-secondary: #718096;
-  --color-grayscale: #a0aec0;
-  --color-grayscale-dark: #2d3748;
-  --color-grayscale-light: #e2e8f0;
-  --color-border: #e2e8f0;
-  --color-primary: #3182ce;
-  --color-primary-light: #ebf8ff;
-  --color-primary-dark: #2c5282;
-  --color-accent: #3182ce;
-  --color-accent-alpha: rgba(49, 130, 206, 0.1);
-  --color-secondary: #f7fafc;
+  --color-background: var(--color-primary-light);
+  --color-text: var(--color-grayscale-dark);
+  --color-text-light: var(--color-grayscale);
+  --color-primary: #D1BFA6;
+  --color-primary-dark: #2ca574;
+  --color-secondary: #F2F1E8;
+  --color-grayscale-light: #EEEEEE;
 
   /* Typography */
   --font-size-overline: 14px;
@@ -94,8 +86,6 @@
   --line-height-subtitle: 28px;
   --font-size-title: 24px;
   --line-height-title: 32px;
-  --font-size-large: 20px;
-  --line-height-large: 28px;
   --font-size-display: 48px;
   --line-height-display: 64px;
 
@@ -119,29 +109,10 @@
   --header-height: 90px;
 
   /* Border radii */
-  --border-radius: 8px;
+  --border-radius: 2px;
 
   /* Animation */
   --transition: .15s;
-}
-
-/* Dark mode */
-:root[data-theme="dark"] {
-  --color-background: #1a202c;
-  --color-background-secondary: #2d3748;
-  --color-surface: #1a202c;
-  --color-text: #f7fafc;
-  --color-text-secondary: #a0aec0;
-  --color-grayscale: #718096;
-  --color-grayscale-dark: #f7fafc;
-  --color-grayscale-light: #4a5568;
-  --color-border: #4a5568;
-  --color-primary: #63b3ed;
-  --color-primary-light: #2a4365;
-  --color-primary-dark: #90cdf4;
-  --color-accent: #63b3ed;
-  --color-accent-alpha: rgba(99, 179, 237, 0.1);
-  --color-secondary: #2d3748;
 }
 
 

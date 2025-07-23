@@ -1,68 +1,34 @@
-.container {
-  max-width: var(--page-width);
-  margin: 0 auto;
-  padding: calc(var(--spacing-48) * 2) var(--spacing-48) var(--spacing-48);
-  text-align: center;
+.root {
+  padding: var(--spacing-32) calc(var(--spacing-48) + var(--spacing-4));
 }
 
-.overline {
-  font-size: var(--font-size-overline);
-  line-height: var(--line-height-overline);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-16);
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+.root:last-child {
+  margin-bottom: 0;
 }
 
 .title {
   font-size: var(--font-size-display);
   line-height: var(--line-height-display);
-  margin-bottom: var(--spacing-24);
-  color: var(--color-text);
-  font-weight: 700;
+  font-weight: var(--font-weight-light);
 }
 
-.text {
-  font-size: var(--font-size-subtitle);
-  line-height: var(--line-height-subtitle);
-  color: var(--color-text-secondary);
-  margin-bottom: var(--spacing-48);
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+.subtitle {
+  font-size: var(--font-size-title);
+  line-height: var(--line-height-title);
+  margin-top: var(--spacing-16);
 }
 
-@media (max-width: 768px) {
-  .container {
-    padding: var(--spacing-64) var(--spacing-32) var(--spacing-48);
-  }
-
-  .title {
-    font-size: 36px;
-    line-height: 44px;
-  }
-
-  .text {
-    font-size: var(--font-size-body);
-    line-height: var(--line-height-body);
-    margin-bottom: var(--spacing-32);
-  }
+.content {
+  margin-top: var(--spacing-48);
 }
 
-@media (max-width: 480px) {
-  .container {
-    padding: var(--spacing-48) var(--spacing-24) var(--spacing-32);
+@media (max-width: 640px) {
+  .root {
+    margin: 0 0 calc(var(--spacing-32) * 2);
+    padding: 0;
   }
 
-  .title {
-    font-size: 28px;
-    line-height: 36px;
-    margin-bottom: var(--spacing-16);
-  }
-
-  .overline {
-    font-size: 12px;
-    margin-bottom: var(--spacing-12);
+  .content {
+    margin-top: var(--spacing-32);
   }
 }
