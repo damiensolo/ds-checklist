@@ -7,6 +7,49 @@ import { useTheme } from "../../utilities/themeContext";
 import s from "./Header.module.css";
 
 const Header = ({ t }) => {
+  const { theme } = useTheme();
+  const router = useRouter();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = useCallback(() => {
+    setIsMenuOpen(!isMenuOpen);
+  }, [isMenuOpen]);
+
+  return (
+    <header className={s.container}>
+      <span className={s.logo}>
+        <Link href="/" className={s.logo}>
+          <img 
+            src="/sd-logo.png" 
+            alt="SD Logo" 
+            className={s.logoImage}
+          />
+        </Link>
+      </span>
+      
+      <nav className={s.nav}>
+        <ul className={s.navList}>
+          <li>
+            <Link href="/about" className={s.navLink}>
+              About
+            </Link>
+          </li>
+          <li>
+            <Link href="/metrics" className={s.navLink}>
+              Metrics
+            </Link>
+          </li>
+        </ul>
+      </nav>
+      
+      <ThemeToggle />
+    </header>
+  );
+};
+
+export default Header;
+
+const Header = ({ t }) => {
   const router = useRouter();
   const { isDarkMode } = useTheme();
   const [active, setActive] = useState(false);
