@@ -27,19 +27,17 @@ const HomeRoute = (props) => {
     });
 
     return (
-      <Link href={`/category/${item.id}/`} key={item.id}>
-        <a className={s.listItem}>
-          <SectionTitle
-            title={t?.[item.id]?.title}
-            key={item.id}
-            total={total}
-            completed={completed}
-            completedLabel={t.core.completed}
-          />
-          <div className={s.arrowRight}>
-            <ArrowRightIcon />
-          </div>
-        </a>
+      <Link href={`/category/${item.id}/`} key={item.id} className={s.listItem}>
+        <SectionTitle
+          title={t?.[item.id]?.title}
+          key={item.id}
+          total={total}
+          completed={completed}
+          completedLabel={t.core.completed}
+        />
+        <div className={s.arrowRight}>
+          <ArrowRightIcon />
+        </div>
       </Link>
     );
   };
