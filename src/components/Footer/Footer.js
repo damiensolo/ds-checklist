@@ -9,8 +9,8 @@ const Footer = ({ t }) => {
   return (
     <div className={s.root}>
       <div className={s.content}>
-        <h2 className={s.title}>{t.footerTitle}</h2>
-        <p className={s.text}>{t.footerText}</p>
+        <h2 className={s.title}>{t.core.footerTitle}</h2>
+        <p className={s.text}>{t.core.footerText}</p>
       </div>
     </div>
   );
