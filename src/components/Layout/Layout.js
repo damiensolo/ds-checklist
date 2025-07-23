@@ -1,10 +1,10 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import styles from "./Layout.module.css";
-import { Header } from "../Header";
-import { Footer } from "../Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 
-export function Layout({ children, ...otherProps }) {
+const Layout = ({ children, t }) => {
   const router = useRouter();
   const [isTransitioning, setIsTransitioning] = useState(false);
 
@@ -32,4 +32,6 @@ export function Layout({ children, ...otherProps }) {
       <Footer />
     </div>
   );
-}
+};
+
+export default Layout;
