@@ -31,14 +31,6 @@
   transition: filter var(--transition);
 }
 
-.logoLight {
-  filter: invert(1) brightness(0.9);
-}
-
-.logoDark {
-  filter: none;
-}
-
 .logoDynamic {
   filter: var(--logo-filter, none);
 }

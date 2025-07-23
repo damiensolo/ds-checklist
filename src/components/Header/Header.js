@@ -4,12 +4,10 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import classnames from "classnames";
 import ThemeToggle from "../ThemeToggle";
-import { useTheme } from "../../utilities/themeContext";
 import s from "./Header.module.css";
 
 const Header = ({ t }) => {
   const router = useRouter();
-  const { theme } = useTheme();
   const [isMounted, setIsMounted] = useState(false);
   const [active, setActive] = useState(false);
 
