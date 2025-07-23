@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from "react";
+
+import React, { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import classnames from "classnames";
@@ -9,46 +10,87 @@ import s from "./Header.module.css";
 const Header = ({ t }) => {
   const router = useRouter();
   const { isDarkMode } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
-  const [active, setActive] = useState(false);
-  const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
-  const burgerClassName = classnames(s.burger, active && s["active"]);
+  const [isClient, setIsClient] = useState(false);
+  const [menuActive, setMenuActive] = useState(false);
 
-  React.useEffect(() => {
-    setMounted(true);
+  // Ensure client-side hydration
+  useEffect(() => {
+    setIsClient(true);
   }, []);
 
-  // Prevent hydration mismatch by showing default logo until mounted
-  const logoSrc = mounted ? (isDarkMode ? "/sd-logo-dark.png" : "/sd-logo.png") : "/sd-logo.png";
-  const logoClass = mounted ? (isDarkMode ? s.logoDark : s.logoLight) : s.logoLight;
-
-  const toggleMenu = useCallback((flag) => {
-    setActive((prev) => {
-      const nextActive = flag === undefined ? !prev : flag;
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = nextActive ? "hidden" : "auto";
+  // Clean menu state management
+  const toggleMenu = useCallback((force) => {
+    setMenuActive(prev => {
+      const nextState = force !== undefined ? force : !prev;
+      
+      // Only manipulate DOM on client side
+      if (typeof window !== 'undefined') {
+        document.body.style.overflow = nextState ? "hidden" : "auto";
       }
-      return nextActive;
+      
+      return nextState;
     });
   }, []);
 
-  const closeMenu = useCallback(() => toggleMenu(false), [toggleMenu]);
+  const closeMenu = useCallback(() => {
+    toggleMenu(false);
+  }, [toggleMenu]);
 
-  const navigate = (e, to) => {
+  // Navigation handler
+  const handleNavigation = useCallback((e, href) => {
     e.preventDefault();
     closeMenu();
-    router.push(to);
+    router.push(href);
+  }, [router, closeMenu]);
+
+  // CSS classes
+  const rightSectionClass = classnames(s.rightSection, {
+    [s.active]: menuActive
+  });
+  
+  const burgerClass = classnames(s.burger, {
+    [s.active]: menuActive
+  });
+
+  // Logo configuration - prevent hydration mismatch
+  const logoConfig = {
+    src: isClient && isDarkMode ? "/sd-logo-dark.png" : "/sd-logo.png",
+    className: isClient && isDarkMode ? s.logoDark : s.logoLight
   };
+
+  // Navigation items
+  const navItems = [
+    {
+      href: "/",
+      label: "Checklist",
+      isActive: router.pathname === "/"
+    },
+    {
+      href: "/metrics",
+      label: "Measure", 
+      isActive: router.pathname === "/metrics" || router.pathname.startsWith("/metrics/")
+    },
+    {
+      href: "/about",
+      label: t?.core?.about || "About",
+      isActive: router.pathname === "/about"
+    },
+    {
+      href: "/share",
+      label: t?.core?.share || "Share",
+      isActive: router.pathname === "/share"
+    }
+  ];
 
   return (
     <header className={s.container}>
+      {/* Logo Section */}
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
           <img
-            src={logoSrc}
+            src={logoConfig.src}
             alt="SD Logo"
-            className={`${s.logoImage} ${logoClass}`}
-            style={{ opacity: mounted ? 1 : 0.8 }}
+            className={`${s.logoImage} ${logoConfig.className}`}
           />
         </Link>
         <Link href="/" onClick={closeMenu}>
@@ -56,43 +98,32 @@ const Header = ({ t }) => {
         </Link>
       </div>
 
-      <div className={rightSectionClassName}>
+      {/* Navigation Section */}
+      <div className={rightSectionClass}>
         <nav className={s.nav}>
           <ul className={s.menu}>
-            <li className={s.item}>
-              <Link 
-                href="/" 
-                className={router.pathname === "/" ? s.active : ""}
-                onClick={closeMenu}
-              >
-                Checklist
-              </Link>
-            </li>
-            <li className={s.item}>
-              <Link 
-                href="/metrics" 
-                className={router.pathname === "/metrics" || router.pathname.startsWith("/metrics/") ? s.active : ""}
-                onClick={closeMenu}
-              >
-                Measure
-              </Link>
-            </li>
-            <li className={s.item}>
-              <Link href="/about" onClick={closeMenu}>
-                {t?.core?.about || "About"}
-              </Link>
-            </li>
-            <li className={s.item}>
-              <Link href="/share" onClick={closeMenu}>
-                {t?.core?.share || "Share"}
-              </Link>
-            </li>
+            {navItems.map(({ href, label, isActive }) => (
+              <li key={href} className={s.item}>
+                <Link 
+                  href={href}
+                  className={isActive ? s.active : ""}
+                  onClick={(e) => handleNavigation(e, href)}
+                >
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </nav>
         <ThemeToggle />
       </div>
 
-      <button className={burgerClassName} onClick={() => toggleMenu()}>
+      {/* Mobile Menu Button */}
+      <button 
+        className={burgerClass} 
+        onClick={() => toggleMenu()}
+        aria-label="Toggle menu"
+      >
         <span className={s.line} />
         <span className={s.line} />
         <span className={s.line} />

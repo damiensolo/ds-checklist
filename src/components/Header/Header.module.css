@@ -1,3 +1,4 @@
+
 .container {
   padding: var(--spacing-32) var(--spacing-48);
   font-size: var(--font-size-body);
@@ -20,6 +21,8 @@
 .logo a {
   padding: 4px;
   border-radius: 4px;
+  text-decoration: none;
+  color: var(--color-text);
 }
 
 .logoImage {
@@ -28,11 +31,11 @@
   height: 40px;
   width: auto;
   display: block;
-  transition: opacity 0.2s ease-in-out;
+  transition: all 0.3s ease;
 }
 
 .logoLight {
-  filter: invert(1) brightness(0.9);
+  filter: none;
 }
 
 .logoDark {
@@ -49,6 +52,7 @@
   background: none;
   z-index: 3;
   margin-right: calc(var(--spacing-12) * -1);
+  cursor: pointer;
 }
 
 .line {
@@ -58,8 +62,7 @@
   height: 2px;
   width: var(--spacing-24);
   background: var(--color-text);
-  transition: opacity 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .line:nth-child(1) {
@@ -81,10 +84,17 @@
   gap: var(--spacing-16);
 }
 
+.nav {
+  display: flex;
+}
+
 .menu {
   display: flex;
   gap: var(--spacing-24);
   align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .item a {
@@ -103,11 +113,7 @@
 
 .item a.active {
   color: var(--color-primary);
-  font-weight: 500;
-}
-
-.button {
-  position: relative;
+  font-weight: 600;
 }
 
 @media (max-width: 640px) {
@@ -145,8 +151,7 @@
     padding: calc(var(--spacing-48) * 3) var(--spacing-32) var(--spacing-48);
     opacity: 0;
     transform: translateY(28px);
-    transition: opacity 0.45s cubic-bezier(0.23, 1, 0.32, 1),
-      transform 0.45s cubic-bezier(0.23, 1, 0.32, 1);
+    transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1);
     pointer-events: none;
     flex-direction: column;
     justify-content: flex-start;
@@ -169,23 +174,15 @@
 
   .menu {
     flex-direction: column;
-    grid-gap: 0;
+    gap: 0;
   }
 
-  .item,
-  .button {
+  .item {
     margin-left: 0;
     width: 100%;
     padding: var(--spacing-12) 0;
     font-size: var(--font-size-title);
     line-height: var(--line-height-title);
-  }
-
-  .button {
-    position: absolute;
-    bottom: 16px;
-    right: 16px;
-    width: 140px;
   }
 
   .item a {
