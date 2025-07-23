@@ -12,12 +12,9 @@ const MetricsRoute = ({ t }) => {
   const { checkedIds } = useCheckedIds();
 
   const metricsData = {
-    id: "metrics",
     sections: [
       {
         id: "business-financial",
-        title: "Business & Financial Impact",
-        description: "Metrics that connect the design system directly to financial and strategic business goals.",
         checklist: [
           "metrics-roi", 
           "metrics-time-to-value", 
@@ -29,26 +26,18 @@ const MetricsRoute = ({ t }) => {
       },
       {
         id: "adoption-engagement", 
-        title: "Adoption & Engagement",
-        description: "Track how teams and products are adopting and engaging with your design system.",
         checklist: ["metrics-adoption-rate", "metrics-component-usage", "metrics-contributions", "metrics-documentation-visits", "metrics-team-satisfaction", "metrics-participation-support"]
       },
       {
         id: "product-design-efficiency",
-        title: "Product & Design Efficiency", 
-        description: "Measure improvements in design and product development workflows.",
         checklist: ["metrics-time-to-market", "metrics-prototype-speed", "metrics-component-library-health", "metrics-component-detachments", "metrics-design-review-time", "metrics-onboarding-time"]
       },
       {
         id: "development-efficiency",
-        title: "Development & Engineering Efficiency",
-        description: "Track improvements in development speed and engineering workflows.",
         checklist: ["metrics-handoff-time", "metrics-task-completion", "metrics-tech-debt", "metrics-code-complexity", "metrics-linter-warnings", "metrics-system-update-efficiency"]
       },
       {
         id: "quality-ux",
-        title: "Quality & User Experience",
-        description: "Monitor the impact on product quality and user experience.",
         checklist: ["metrics-ui-consistency", "metrics-accessibility", "metrics-support-tickets", "metrics-design-debt", "metrics-accessibility-score", "metrics-user-satisfaction", "metrics-task-completion-rates"]
       }
     ]
