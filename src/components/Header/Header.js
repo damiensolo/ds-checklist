@@ -16,12 +16,14 @@ const Header = ({ t }) => {
   const toggleMenu = useCallback((flag) => {
     setActive((prev) => {
       const nextActive = flag === undefined ? !prev : flag;
-      document.body.style.overflow = nextActive ? "hidden" : "auto";
+      if (typeof document !== 'undefined') {
+        document.body.style.overflow = nextActive ? "hidden" : "auto";
+      }
       return nextActive;
     });
   }, []);
 
-  const closeMenu = useCallback(() => toggleMenu(false), []);
+  const closeMenu = useCallback(() => toggleMenu(false), [toggleMenu]);
 
   const navigate = (e, to) => {
     e.preventDefault();
@@ -31,42 +33,49 @@ const Header = ({ t }) => {
 
   return (
     <header className={s.container}>
-      <span className={s.logo}>
-        <Link href="/">
+      <div className={s.logo}>
+        <Link href="/" onClick={closeMenu}>
           <img 
             src="/sd-logo.png" 
             alt="SD Logo" 
             className={`${s.logoImage} ${isDarkMode ? s.logoDark : s.logoLight}`}
-            onClick={closeMenu}
           />
         </Link>
-        <Link href="/">
-          <span onClick={closeMenu}>Design System Checklist</span>
+        <Link href="/" onClick={closeMenu}>
+          Design System Checklist
         </Link>
-      </span>
+      </div>
 
       <div className={rightSectionClassName}>
         <nav className={s.nav}>
           <ul className={s.menu}>
             <li className={s.item}>
-              <a href="/" onClick={(e) => navigate(e, "/")} className={router.pathname === "/" ? s.active : ""}>
+              <Link 
+                href="/" 
+                className={router.pathname === "/" ? s.active : ""}
+                onClick={closeMenu}
+              >
                 Checklist
-              </a>
+              </Link>
             </li>
             <li className={s.item}>
-              <a href="/metrics" onClick={(e) => navigate(e, "/metrics")} className={router.pathname === "/metrics" ? s.active : ""}>
+              <Link 
+                href="/metrics" 
+                className={router.pathname === "/metrics" || router.pathname.startsWith("/metrics/") ? s.active : ""}
+                onClick={closeMenu}
+              >
                 Measure
-              </a>
+              </Link>
             </li>
             <li className={s.item}>
-              <a href="/about" onClick={(e) => navigate(e, "/about")}>
-                {t.core.about}
-              </a>
+              <Link href="/about" onClick={closeMenu}>
+                {t?.core?.about || "About"}
+              </Link>
             </li>
             <li className={s.item}>
-              <a href="/share" onClick={(e) => navigate(e, "/share")}>
-                {t.core.share}
-              </a>
+              <Link href="/share" onClick={closeMenu}>
+                {t?.core?.share || "Share"}
+              </Link>
             </li>
           </ul>
         </nav>
