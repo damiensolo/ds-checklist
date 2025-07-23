@@ -1,0 +1,19 @@
+[Vercel Web Analytics] Debug mode is enabled by default in development. No requests will be sent to the server.
+[Vercel Web Analytics] [pageview] https://7e7a6d28-9d76-44ca-9b77-2d893b38df5a-00-3gizqany8udlz.kirk.replit.dev/metrics/adoption-engagement/ 
+Object {o: "https://7e7a6d28-9d76-44ca-9b77-2d893b38df5a-00-3gizqany8udlz.kirk.replit.dev/metrics/adoption-enga…", sv: "0.1.3", sdkn: "@vercel/analytics", sdkv: "1.1.1", ts: 1753261158028, …}
+Warning: findDOMNode is deprecated and will be removed in the next major release. Instead, add a ref directly to the element you want to reference. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-find-node
+    at Transition (webpack-internal:///(pages-dir-browser)/./node_modules/react-transition-group/esm/Transition.js:134:30)
+    at CSSTransition (webpack-internal:///(pages-dir-browser)/./node_modules/react-transition-group/esm/CSSTransition.js:120:35)
+    at TransitionGroup (webpack-internal:///(pages-dir-browser)/./node_modules/react-transition-group/esm/TransitionGroup.js:57:30)
+    at Layout (webpack-internal:///(pages-dir-browser)/./src/components/Layout/Layout.js:24:19)
+    at MetricsSectionRoute (webpack-internal:///(pages-dir-browser)/./pages/metrics/[id].js:26:32)
+    at ChecklistsProvider (webpack-internal:///(pages-dir-browser)/./src/utilities/checklistsContext.js:17:13)
+    at ThemeProvider (webpack-internal:///(pages-dir-browser)/./src/utilities/themeContext.js:14:26)
+    at App (webpack-internal:///(pages-dir-browser)/./pages/_app.js:45:16)
+    at PathnameContextProviderAdapter (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/shared/lib/router/adapters.js:81:11)
+    at PagesDevOverlayErrorBoundary (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-error-boundary.js:25:9)
+    at PagesDevOverlayBridge (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/next-devtools/userspace/pages/pages-dev-overlay-setup.js:45:11)
+    at Container (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:80:1)
+    at AppContainer (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:188:11)
+    at Root (webpack-internal:///(pages-dir-browser)/./node_modules/next/dist/client/index.js:417:11)
+[HMR] connected
