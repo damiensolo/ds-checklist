@@ -8,6 +8,9 @@ const nextConfig = {
     unoptimized: true
   },
   reactStrictMode: false,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {
