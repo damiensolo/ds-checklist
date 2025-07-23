@@ -8,7 +8,12 @@ import s from "./Header.module.css";
 
 const Header = ({ t }) => {
   const router = useRouter();
-  const { isDarkMode } = useTheme();
+  const { theme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
   const [active, setActive] = useState(false);
   const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
   const burgerClassName = classnames(s.burger, active && s["active"]);
@@ -35,11 +40,15 @@ const Header = ({ t }) => {
     <header className={s.container}>
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
-          <img 
-            src="/sd-logo.png" 
-            alt="SD Logo" 
-            className={`${s.logoImage} ${isDarkMode ? s.logoDark : s.logoLight}`}
-          />
+          <img
+              className={`${s.logoImage} ${
+                !mounted ? s.logoDark : theme === "dark" ? s.logoLight : s.logoDark
+              }`}
+              src={!mounted ? "/sd-logo-dark.png" : theme === "dark" ? "/sd-logo.png" : "/sd-logo-dark.png"}
+              alt="Design System Checklist"
+              width="30"
+              height="30"
+            />
         </Link>
         <Link href="/" onClick={closeMenu}>
           Design System Checklist

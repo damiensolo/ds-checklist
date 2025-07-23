@@ -43,7 +43,8 @@ const CategoryRoute = (props) => {
               categoryTranslations.sections[section.id];
 
             if (!sectionTranslations) {
-              throw new Error(`Can't find section: ${section.id}`);
+              console.warn(`Can't find section: ${section.id}. Skipping...`);
+              return null;
             }
 
             const sectionData = {
@@ -63,14 +64,14 @@ const CategoryRoute = (props) => {
               }),
             };
 
-            return (
+            return sectionData ? (
               <Section
                 key={section.id}
                 section={sectionData}
                 completedLabel={t.core.completed}
               />
-            );
-          })}
+            ) : null;
+          }).filter(Boolean)}
           <CategoryNav
             previousLabel={t.core.previous}
             nextLabel={t.core.next}
