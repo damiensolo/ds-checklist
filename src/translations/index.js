@@ -52,5 +52,29 @@ export default {
     footerTitle: "",
     footerText: "",
     footerAction: "Learn more"
+  },
+  metrics: {
+    title: "Design System Metrics",
+    description: "Measure the impact and effectiveness of your design system with these key performance indicators and metrics.",
+    "business-financial": {
+      title: "Business & Financial Impact",
+      description: "Metrics that connect the design system directly to financial and strategic business goals."
+    },
+    "adoption-engagement": {
+      title: "Adoption & Engagement",
+      description: "Track how teams and products are adopting and engaging with your design system."
+    },
+    "product-design-efficiency": {
+      title: "Product & Design Efficiency",
+      description: "Measure improvements in design and product development workflows."
+    },
+    "development-efficiency": {
+      title: "Development & Engineering Efficiency",
+      description: "Track improvements in development speed and engineering workflows."
+    },
+    "quality-ux": {
+      title: "Quality & User Experience",
+      description: "Monitor the impact on product quality and user experience."
+    }
   }
 };
