@@ -32,11 +32,11 @@ const AboutRoute = ({ t }) => {
   );
 };
 
-import translations from "../../src/translations";
+export async function getStaticProps({ locale }) {
+  const t = (await import(`../../src/translations/${locale}/index`)).default;
 
-export async function getStaticProps() {
   return {
-    props: { t: translations },
+    props: { t },
   };
 }
 

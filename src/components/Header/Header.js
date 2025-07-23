@@ -9,18 +9,9 @@ import s from "./Header.module.css";
 const Header = ({ t }) => {
   const router = useRouter();
   const { isDarkMode } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
   const [active, setActive] = useState(false);
   const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
   const burgerClassName = classnames(s.burger, active && s["active"]);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  // Prevent hydration mismatch by showing default logo until mounted
-  const logoSrc = mounted ? (isDarkMode ? "/sd-logo-dark.png" : "/sd-logo.png") : "/sd-logo.png";
-  const logoClass = mounted ? (isDarkMode ? s.logoDark : s.logoLight) : s.logoLight;
 
   const toggleMenu = useCallback((flag) => {
     setActive((prev) => {
@@ -44,11 +35,10 @@ const Header = ({ t }) => {
     <header className={s.container}>
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
-          <img
-            src={logoSrc}
-            alt="SD Logo"
-            className={`${s.logoImage} ${logoClass}`}
-            style={{ opacity: mounted ? 1 : 0.8 }}
+          <img 
+            src="/sd-logo.png" 
+            alt="SD Logo" 
+            className={`${s.logoImage} ${isDarkMode ? s.logoDark : s.logoLight}`}
           />
         </Link>
         <Link href="/" onClick={closeMenu}>

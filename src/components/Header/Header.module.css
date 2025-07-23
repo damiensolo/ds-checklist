@@ -25,10 +25,10 @@
 .logoImage {
   margin-right: var(--spacing-12);
   border-radius: 4px;
-  height: 40px;
-  width: auto;
+  height: 30px;
+  width: 30px;
   display: block;
-  transition: opacity 0.2s ease-in-out;
+  transition: filter var(--transition);
 }
 
 .logoLight {
@@ -110,6 +110,8 @@
   position: relative;
 }
 
+
+
 @media (max-width: 640px) {
   .container {
     padding: var(--spacing-24) var(--spacing-32);
@@ -187,6 +189,8 @@
     right: 16px;
     width: 140px;
   }
+
+
 
   .item a {
     display: block;
