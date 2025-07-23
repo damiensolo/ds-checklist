@@ -1,3 +1,4 @@
+
 .container {
   max-width: var(--page-width);
   margin: 0 auto;
@@ -5,8 +6,8 @@
 }
 
 .list {
-  margin: calc(var(--spacing-48) * 2) 0 calc(var(--spacing-48) * 3);
-  padding: 0 calc(var(--spacing-48) + var(--spacing-4));
+  margin: calc(var(--spacing-32) * 2) 0 calc(var(--spacing-48) * 3);
+  padding: 0 var(--spacing-24);
 }
 
 .listItem {
@@ -26,11 +27,36 @@
   transform: translate(0, -50%) translateZ(0);
 }
 
+.sectionOverview {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-32);
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
+  background: var(--color-background-secondary);
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+.sectionOverview:hover {
+  cursor: pointer;
+}
+
+.sectionOverview:hover .arrowRight {
+  opacity: 1;
+  transform: translate(0, -50%) translateZ(0);
+}
+
 .arrowRight {
   position: absolute;
-  right: 0;
+  right: var(--spacing-32);
   top: 50%;
-  transform: translate(-12px, -50%) translateZ(0);
+  transform: translate(12px, -50%) translateZ(0);
   opacity: 0;
   transition: transform var(--transition) ease-in-out,
     opacity var(--transition) ease-in-out;
@@ -38,6 +64,12 @@
 
 .arrowRight path {
   fill: currentColor;
+}
+
+.sectionDescription {
+  margin: var(--spacing-12) 0 0 0;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
 }
 
 @media (max-width: 640px) {
