@@ -71,7 +71,7 @@ const App = ({ Component, pageProps }) => {
           type="image/png"
           sizes="16x16"
           href="/favicon-16x16.png"
-        /></link>
+        />
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </Head>
