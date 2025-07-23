@@ -41,6 +41,25 @@
 
   --font-weight-light: 300;
   --font-weight-regular: 400;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] {
+  --color-background: #121212;
+  --color-text: #E5E5E5;
+  --color-text-light: #A8A29E;
+  --color-primary: #A8A29E;
+  --color-primary-dark: #78716C;
+  --color-secondary: #1C1917;
+  --color-grayscale-light: #292524;
+  --color-surface: var(--color-background);
+  --color-background-secondary: var(--color-secondary);
+  --color-accent: #D1BFA6;
+  --color-accent-alpha: rgba(209, 191, 166, 0.1);
+  --color-grayscale: #78716C;
+  --color-grayscale-dark: #E5E5E5;
+  --color-border: #404040;
+  --color-text-secondary: #A8A29E;
 
   /* Spacing */
   --spacing-2: 2px;
