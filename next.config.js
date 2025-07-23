@@ -9,17 +9,13 @@ const nextConfig = {
   eslint: {
     ignoreDuringBuilds: true,
   },
-  experimental: {
-    outputFileTracingRoot: process.cwd(),
-  },
   compress: true,
   poweredByHeader: false,
   generateEtags: false,
   images: {
     unoptimized: true
   },
-  swcMinify: true,
-  output: 'standalone',
+  swcMinify: false,
   async rewrites() {
     return [
       {
