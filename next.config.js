@@ -6,7 +6,7 @@ const nextConfig = {
     locales: ["en", "ko", "pt", "tr"],
     defaultLocale: "en",
   },
-  reactStrictMode: true,
+  reactStrictMode: false,
   webpack: (config, { dev }) => {
     if (dev) {
       config.watchOptions = {

@@ -41,13 +41,14 @@ const Header = ({ t }) => {
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
           <img
-              className={`${s.logoImage} ${
-                !mounted ? s.logoDark : theme === "dark" ? s.logoLight : s.logoDark
-              }`}
-              src={!mounted ? "/sd-logo-dark.png" : theme === "dark" ? "/sd-logo.png" : "/sd-logo-dark.png"}
+              className={`${s.logoImage} ${s.logoDark}`}
+              src="/sd-logo-dark.png"
               alt="Design System Checklist"
               width="30"
               height="30"
+              style={{
+                filter: mounted && theme === "dark" ? "invert(1) brightness(0.9)" : "none"
+              }}
             />
         </Link>
         <Link href="/" onClick={closeMenu}>
