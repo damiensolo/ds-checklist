@@ -14,7 +14,7 @@
     "react-transition-group": "^4.4.2"
   },
   "scripts": {
-    "dev": "NODE_OPTIONS='--openssl-legacy-provider' next dev",
+    "dev": "NODE_OPTIONS='--openssl-legacy-provider' next dev -H 0.0.0.0",
     "build": "next build",
     "start": "next start"
   },
