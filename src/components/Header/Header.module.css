@@ -23,15 +23,7 @@
   border-radius: 4px;
 }
 
-.logoImage {
-  margin-right: var(--spacing-12);
-  border-radius: 4px;
-  height: 30px;
-  width: 30px;
-  display: block;
-  transition: filter var(--transition);
-  filter: var(--logo-filter, none);
-}
+
 
 .burger {
   display: none;

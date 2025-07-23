@@ -40,15 +40,6 @@ const Header = ({ t }) => {
     <header className={s.container}>
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
-          <img
-            className={s.logoImage}
-            src="/sd-logo-dark.png"
-            alt="Design System Checklist"
-            width="30"
-            height="30"
-          />
-        </Link>
-        <Link href="/" onClick={closeMenu}>
           Design System Checklist
         </Link>
       </div>
