@@ -249,9 +249,21 @@ const MetricsRoute = ({ t }) => {
 
 import translations from "../../src/translations";
 
+// Add metrics translations to the centralized system
+const metricsTranslations = {
+  title: "Design System Metrics",
+  description: "Measure the impact and effectiveness of your design system with these key performance indicators and metrics.",
+  // ... rest of metrics translations would go here
+};
+
 export async function getStaticProps() {
   return {
-    props: { t: translations },
+    props: { 
+      t: { 
+        ...translations, 
+        metrics: metricsTranslations 
+      } 
+    },
   };
 }
 
