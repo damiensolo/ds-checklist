@@ -17,7 +17,6 @@ const Header = ({ t }) => {
 
   const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
   const burgerClassName = classnames(s.burger, active && s["active"]);
-  const logoClassName = classnames(s.logoImage, s.logoDynamic);
 
   const toggleMenu = useCallback((flag) => {
     setActive((prev) => {
@@ -42,7 +41,7 @@ const Header = ({ t }) => {
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
           <img
-            className={logoClassName}
+            className={s.logoImage}
             src="/sd-logo-dark.png"
             alt="Design System Checklist"
             width="30"
