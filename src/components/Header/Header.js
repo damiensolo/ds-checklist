@@ -1,4 +1,5 @@
-import React, { useState, useCallback } from "react";
+
+import React, { useState, useCallback, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import classnames from "classnames";
@@ -9,14 +10,19 @@ import s from "./Header.module.css";
 const Header = ({ t }) => {
   const router = useRouter();
   const { theme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
-
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  const [isMounted, setIsMounted] = useState(false);
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
   const burgerClassName = classnames(s.burger, active && s["active"]);
+  const logoClassName = classnames(s.logoImage, {
+    [s.logoLight]: isMounted && theme === "dark",
+    [s.logoDark]: !isMounted || theme === "light"
+  });
 
   const toggleMenu = useCallback((flag) => {
     setActive((prev) => {
@@ -41,15 +47,12 @@ const Header = ({ t }) => {
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
           <img
-              className={`${s.logoImage} ${s.logoDark}`}
-              src="/sd-logo-dark.png"
-              alt="Design System Checklist"
-              width="30"
-              height="30"
-              style={{
-                filter: mounted && theme === "dark" ? "invert(1) brightness(0.9)" : "none"
-              }}
-            />
+            className={logoClassName}
+            src={!isMounted || theme === "light" ? "/sd-logo-dark.png" : "/sd-logo.png"}
+            alt="Design System Checklist"
+            width="30"
+            height="30"
+          />
         </Link>
         <Link href="/" onClick={closeMenu}>
           Design System Checklist
