@@ -15,6 +15,51 @@ const metricsData = {
         "metrics-brand-reputation",
         "metrics-company-scalability"
       ]
+    },
+    {
+      id: "adoption-engagement",
+      checklist: [
+        "metrics-adoption-rate",
+        "metrics-component-usage",
+        "metrics-contributions",
+        "metrics-documentation-visits",
+        "metrics-team-satisfaction",
+        "metrics-participation-support"
+      ]
+    },
+    {
+      id: "product-design-efficiency",
+      checklist: [
+        "metrics-time-to-market",
+        "metrics-prototype-speed",
+        "metrics-component-library-health",
+        "metrics-component-detachments",
+        "metrics-design-review-time",
+        "metrics-onboarding-time"
+      ]
+    },
+    {
+      id: "development-efficiency",
+      checklist: [
+        "metrics-handoff-time",
+        "metrics-task-completion",
+        "metrics-tech-debt",
+        "metrics-code-complexity",
+        "metrics-linter-warnings",
+        "metrics-system-update-efficiency"
+      ]
+    },
+    {
+      id: "quality-ux",
+      checklist: [
+        "metrics-ui-consistency",
+        "metrics-accessibility",
+        "metrics-support-tickets",
+        "metrics-design-debt",
+        "metrics-accessibility-score",
+        "metrics-user-satisfaction",
+        "metrics-task-completion-rates"
+      ]
     }
   ]
 };
@@ -59,7 +104,11 @@ const MetricDetailRoute = ({ t, sectionId }) => {
 export async function getStaticPaths() {
   return {
     paths: [
-      { params: { id: "business-financial" } }
+      { params: { id: "business-financial" } },
+      { params: { id: "adoption-engagement" } },
+      { params: { id: "product-design-efficiency" } },
+      { params: { id: "development-efficiency" } },
+      { params: { id: "quality-ux" } }
     ],
     fallback: false,
   };
