@@ -1,0 +1,109 @@
+framework-5f4595e5518b5600.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+cu @ framework-5f4595e5518b5600.js:1
+main-49b82626af984845.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+J @ main-49b82626af984845.js:1
+main-49b82626af984845.js:1 A client-side exception has occurred, see here for more info: https://nextjs.org/docs/messages/client-side-exception-occurred
+J @ main-49b82626af984845.js:1
+framework-5f4595e5518b5600.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+cu @ framework-5f4595e5518b5600.js:1
+main-49b82626af984845.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+J @ main-49b82626af984845.js:1
+main-49b82626af984845.js:1 A client-side exception has occurred, see here for more info: https://nextjs.org/docs/messages/client-side-exception-occurred
+J @ main-49b82626af984845.js:1
+framework-5f4595e5518b5600.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+cu @ framework-5f4595e5518b5600.js:1
+main-49b82626af984845.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+J @ main-49b82626af984845.js:1
+main-49b82626af984845.js:1 A client-side exception has occurred, see here for more info: https://nextjs.org/docs/messages/client-side-exception-occurred
+J @ main-49b82626af984845.js:1
+framework-5f4595e5518b5600.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+cu @ framework-5f4595e5518b5600.js:1
+main-49b82626af984845.js:1 Error: Minified React error #143; visit https://reactjs.org/docs/error-decoder.html?invariant=143 for the full message or use the non-minified dev environment for full errors and additional helpful warnings.
+    at Object.only (framework-5f4595e5518b5600.js:1:123687)
+    at 415-101c20eb345da51f.js:1:2317
+    at oo (framework-5f4595e5518b5600.js:1:59412)
+    at Ao (framework-5f4595e5518b5600.js:1:67599)
+    at Ku (framework-5f4595e5518b5600.js:1:113771)
+    at Li (framework-5f4595e5518b5600.js:1:98953)
+    at Ni (framework-5f4595e5518b5600.js:1:98881)
+    at Pi (framework-5f4595e5518b5600.js:1:98744)
+    at bi (framework-5f4595e5518b5600.js:1:95710)
+    at framework-5f4595e5518b5600.js:1:45204
+J @ main-49b82626af984845.js:1
+main-49b82626af984845.js:1 A client-side exception has occurred, see here for more info: https://nextjs.org/docs/messages/client-side-exception-occurred
+J @ main-49b82626af984845.js:1
+script.js:1  Failed to load resource: the server responded with a status of 404 ()
+_app-cf07a8508935c93b.js:1 [Vercel Web Analytics] Failed to load script from /_vercel/insights/script.js. Be sure to enable Web Analytics for your project and deploy again. See https://vercel.com/docs/analytics/quickstart for more information.
+design-system-checklist.replit.app/:1 Access to manifest at 'https://designsystemchecklist.com/site.webmanifest' from origin 'https://design-system-checklist.replit.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+site.webmanifest:1  Failed to load resource: net::ERR_FAILED
+design-system-checklist.replit.app/:1 Access to internal resource at 'https://designsystemchecklist.com/site.webmanifest' from origin 'https://design-system-checklist.replit.app' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
