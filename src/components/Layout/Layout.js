@@ -1,37 +1,35 @@
-import React from "react";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
-import { useRouter } from "next/router";
-import Header from "../Header";
-import Footer from "../Footer";
-import s from "./Layout.module.css";
+import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
+import styles from "./Layout.module.css";
+import { Header } from "../Header";
+import { Footer } from "../Footer";
 
-const Layout = ({ t, children }) => {
-  const { pathname } = useRouter();
-  const [mounted, setMounted] = React.useState(false);
+export function Layout({ children, ...otherProps }) {
+  const router = useRouter();
+  const [isTransitioning, setIsTransitioning] = useState(false);
 
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => {
+    const handleRouteChangeStart = () => setIsTransitioning(true);
+    const handleRouteChangeComplete = () => setIsTransitioning(false);
+
+    router.events.on('routeChangeStart', handleRouteChangeStart);
+    router.events.on('routeChangeComplete', handleRouteChangeComplete);
+
+    return () => {
+      router.events.off('routeChangeStart', handleRouteChangeStart);
+      router.events.off('routeChangeComplete', handleRouteChangeComplete);
+    };
+  }, [router]);
 
   return (
-    <>
-      <Header t={t} />
-      <TransitionGroup component={null}>
-        {mounted && (
-          <CSSTransition
-            key={pathname}
-            timeout={{ enter: 600, exit: 0 }}
-            classNames="fade"
-          >
-            <div className={s.container} key={pathname}>
-              <div className={s.content}>{children}</div>
-              <Footer t={t} />
-            </div>
-          </CSSTransition>
-        )}
-      </TransitionGroup>
-    </>
+    <div className={styles.layout}>
+      <Header />
+      <main className={styles.main}>
+        <div className={`${styles.page} ${isTransitioning ? styles.transitioning : ''}`}>
+          {children}
+        </div>
+      </main>
+      <Footer />
+    </div>
   );
-};
-
-export default Layout;
+}
