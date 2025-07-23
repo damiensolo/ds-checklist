@@ -6,7 +6,7 @@
 
 .list {
   margin: calc(var(--spacing-48) * 2) 0 calc(var(--spacing-48) * 3);
-  padding: 0 calc(var(--spacing-48) + var(--spacing-4));
+  padding: 0;
 }
 
 .listItem {
@@ -40,13 +40,26 @@
   fill: currentColor;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .container {
-    padding: var(--spacing-32);
+    padding: var(--spacing-32) var(--spacing-24);
   }
 
   .list {
-    padding: 0;
-    margin-bottom: calc(var(--spacing-48) * 2);
+    margin: var(--spacing-48) 0 calc(var(--spacing-48) * 2);
+  }
+
+  .listItem {
+    margin-bottom: var(--spacing-16);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: var(--spacing-24) var(--spacing-16);
+  }
+
+  .list {
+    margin: var(--spacing-32) 0 var(--spacing-48);
   }
 }
