@@ -32,7 +32,7 @@ const Header = ({ t }) => {
   return (
     <header className={s.container}>
       <span className={s.logo}>
-        <Link href="/">
+        <Link href="/" className={s.logo}>
           <img 
             src="/sd-logo.png" 
             alt="SD Logo" 
