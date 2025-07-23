@@ -18,7 +18,7 @@ export default {
   exportAction: "Share your progress",
   exportComplete: "Link copied",
 
-  footerTitle: "",
-  footerText: "",
+  footerTitle: "Design System Checklist",
+  footerText: "An open-source checklist to help you plan, build and grow your design system.",
   footerAction: "Learn more",
 };
