@@ -8,10 +8,15 @@ import s from "./Header.module.css";
 
 const Header = ({ t }) => {
   const router = useRouter();
-  const { isDarkMode } = useTheme();
+  const { theme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
   const [active, setActive] = useState(false);
   const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
   const burgerClassName = classnames(s.burger, active && s["active"]);
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const toggleMenu = useCallback((flag) => {
     setActive((prev) => {
@@ -35,10 +40,12 @@ const Header = ({ t }) => {
     <header className={s.container}>
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
-          <img 
-            src="/sd-logo.png" 
-            alt="SD Logo" 
-            className={`${s.logoImage} ${isDarkMode ? s.logoDark : s.logoLight}`}
+          <img
+            src={mounted && theme === "dark" ? "/sd-logo-dark.png" : "/sd-logo.png"}
+            alt="SD Logo"
+            className={`${s.logoImage} ${
+              mounted && theme === "dark" ? s.logoDark : s.logoLight
+            }`}
           />
         </Link>
         <Link href="/" onClick={closeMenu}>
