@@ -29,7 +29,6 @@ const App = ({ Component, pageProps }) => {
         <meta name="robots" content="index,follow" />
         <meta name="googlebot" content="index,follow" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://designsystemchecklist.com/" />
         <meta property="og:title" content="Design System Checklist" />
         <meta
           property="og:description"
@@ -37,15 +36,11 @@ const App = ({ Component, pageProps }) => {
         />
         <meta
           property="og:image"
-          content="https://designsystemchecklist.com/meta-v2.png"
+          content="/meta-v2.png"
         />
         <meta property="og:image:alt" content="Design System Checklist" />
         <meta property="og:locale" content="en_US" />
         <meta property="twitter:card" content="summary_large_image" />
-        <meta
-          property="twitter:url"
-          content="https://designsystemchecklist.com/"
-        />
         <meta property="twitter:title" content="Design System Checklist" />
         <meta
           property="twitter:description"
@@ -53,30 +48,30 @@ const App = ({ Component, pageProps }) => {
         />
         <meta
           property="twitter:image"
-          content="https://designsystemchecklist.com/meta-v2.png"
+          content="/meta-v2.png"
         />
         <link
           rel="manifest"
-          href="https://designsystemchecklist.com/site.webmanifest"
+          href="/site.webmanifest"
         />
-        <link rel="icon" href="https://designsystemchecklist.com/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
         <link
           rel="apple-touch-icon"
           sizes="152x152"
-          href="https://designsystemchecklist.com/apple-touch-icon.png"
+          href="/apple-touch-icon.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="https://designsystemchecklist.com/favicon-32x32.png"
+          href="/favicon-32x32.png"
         />
         <link
           rel="icon"
           type="image/png"
           sizes="16x16"
-          href="https://designsystemchecklist.com/favicon-16x16.png"
-        />
+          href="/favicon-16x16.png"
+        /></link>
         <meta name="msapplication-TileColor" content="#ffffff" />
         <meta name="theme-color" content="#ffffff" />
       </Head>

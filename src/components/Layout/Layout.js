@@ -16,14 +16,14 @@ const Layout = ({ t, children }) => {
   return (
     <>
       <Header t={t} />
-      <TransitionGroup>
+      <TransitionGroup component={null}>
         {mounted && (
           <CSSTransition
             key={pathname}
             timeout={{ enter: 600, exit: 0 }}
             classNames="fade"
           >
-            <div className={s.container}>
+            <div className={s.container} key={pathname}>
               <div className={s.content}>{children}</div>
               <Footer t={t} />
             </div>
