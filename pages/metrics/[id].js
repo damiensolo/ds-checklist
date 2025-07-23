@@ -1,4 +1,3 @@
-
 import React from "react";
 import Layout from "../../src/components/Layout";
 import Hero from "../../src/components/Hero";
@@ -211,7 +210,7 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
 
   const section = metricsData.sections.find(s => s.id === sectionId);
   const sectionTranslations = metricsTranslations[sectionId];
-  
+
   if (!section || !sectionTranslations) {
     return null;
   }
@@ -266,31 +265,19 @@ const MetricsSectionRoute = ({ t, sectionId }) => {
 };
 
 export async function getStaticPaths() {
-  const paths = [
-    "business-financial",
-    "adoption-engagement", 
-    "product-design-efficiency",
-    "development-efficiency",
-    "quality-ux"
-  ].map((id) => ({
-    params: { id },
-  }));
-
   return {
-    paths,
+    paths: [
+      "/metrics/adoption-engagement",
+      "/metrics/business-financial",
+      "/metrics/development-efficiency",
+      "/metrics/product-design-efficiency",
+    ],
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params, locale }) {
-  const t = (await import(`../../src/translations/${locale}/index`)).default;
-
-  return {
-    props: { 
-      t,
-      sectionId: params.id 
-    },
-  };
+export async function getStaticProps({ params }) {
+  const t = (await import('../../src/translations/en/index')).default;
 }
 
 export default MetricsSectionRoute;

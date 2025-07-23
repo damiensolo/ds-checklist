@@ -101,7 +101,7 @@ export async function getStaticPaths() {
       "/category/components",
       "/category/maintenance",
     ],
-    fallback: true,
+    fallback: false,
   };
 }
 
