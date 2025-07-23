@@ -4,22 +4,25 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const [isDarkMode, setIsDarkMode] = useState(true); // Always start with dark mode for SSR consistency
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // On first mount, check localStorage and update state if needed
+    // Mark as client-side and check localStorage
+    setIsClient(true);
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       const shouldBeDark = savedTheme === 'dark';
-      if (shouldBeDark !== isDarkMode) {
-        setIsDarkMode(shouldBeDark);
-        return; // Exit early, the next useEffect will handle the DOM update
-      }
+      setIsDarkMode(shouldBeDark);
     }
-    
-    // Apply theme to document and save to localStorage
-    document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
-    localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
-  }, [isDarkMode]);
+  }, []);
+
+  useEffect(() => {
+    // Only apply theme changes when on client side
+    if (isClient) {
+      document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+      localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+    }
+  }, [isDarkMode, isClient]);
 
   const toggleTheme = () => {
     setIsDarkMode(prev => !prev);

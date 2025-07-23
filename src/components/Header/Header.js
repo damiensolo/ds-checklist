@@ -18,6 +18,10 @@ const Header = ({ t }) => {
     setMounted(true);
   }, []);
 
+  // Prevent hydration mismatch by showing default logo until mounted
+  const logoSrc = mounted ? (isDarkMode ? "/sd-logo-dark.png" : "/sd-logo.png") : "/sd-logo.png";
+  const logoClass = mounted ? (isDarkMode ? s.logoDark : s.logoLight) : s.logoLight;
+
   const toggleMenu = useCallback((flag) => {
     setActive((prev) => {
       const nextActive = flag === undefined ? !prev : flag;
@@ -41,11 +45,10 @@ const Header = ({ t }) => {
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
           <img
-            src={mounted && isDarkMode ? "/sd-logo-dark.png" : "/sd-logo.png"}
+            src={logoSrc}
             alt="SD Logo"
-            className={`${s.logoImage} ${
-              mounted && isDarkMode ? s.logoDark : s.logoLight
-            }`}
+            className={`${s.logoImage} ${logoClass}`}
+            style={{ opacity: mounted ? 1 : 0.8 }}
           />
         </Link>
         <Link href="/" onClick={closeMenu}>
