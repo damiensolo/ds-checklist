@@ -104,8 +104,10 @@ export async function getStaticPaths() {
   };
 }
 
-export async function getStaticProps({ locale }) {
-  const t = (await import(`../../src/translations/${locale}/index`)).default;
+import translations from "../../src/translations";
+
+export async function getStaticProps() {
+  const t = translations;
 
   return {
     props: { t },
