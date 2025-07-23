@@ -40,7 +40,12 @@ const Header = ({ t }) => {
     <header className={s.container}>
       <div className={s.logo}>
         <Link href="/" onClick={closeMenu}>
-          Design System Checklist
+          <img 
+            src="/sd-logo.svg" 
+            alt="SD Logo" 
+            className={s.logoImage}
+          />
+          <span className={s.logoText}>Design System Checklist</span>
         </Link>
       </div>
 

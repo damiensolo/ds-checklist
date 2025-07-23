@@ -20,6 +20,13 @@
 .logo a {
   padding: 4px;
   border-radius: 4px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-12);
+}
+
+.logoText {
+  font-weight: var(--font-weight-regular);
 }
 
 

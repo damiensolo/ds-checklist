@@ -33,7 +33,6 @@
   --font-size-button: 16px;
   --line-height-button: 56px;
   --font-size-subtitle: 20px;
-  --font-size-nav-link: 16px;
   --line-height-subtitle: 28px;
   --font-size-title: 24px;
   --line-height-title: 32px;
@@ -64,6 +63,9 @@
 
   /* Animation */
   --transition: .15s;
+
+  /* Logo theme switching */
+  --logo-filter: invert(1) brightness(0.9);
 }
 
 /* Light mode */
@@ -114,6 +116,9 @@
 
   /* Animation */
   --transition: .15s;
+
+  /* Logo theme switching */
+  --logo-filter: none;
 }
 
 
