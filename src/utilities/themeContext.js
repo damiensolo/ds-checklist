@@ -16,6 +16,7 @@ export const ThemeProvider = ({ children }) => {
   useEffect(() => {
     // Apply theme to document and save to localStorage
     document.documentElement.setAttribute('data-theme', isDarkMode ? 'dark' : 'light');
+    document.documentElement.style.setProperty('--logo-filter', isDarkMode ? 'invert(1) brightness(0.9)' : 'none');
     localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
   }, [isDarkMode]);
 

@@ -39,6 +39,10 @@
   filter: none;
 }
 
+.logoDynamic {
+  filter: var(--logo-filter, none);
+}
+
 .burger {
   display: none;
   padding: var(--spacing-24);

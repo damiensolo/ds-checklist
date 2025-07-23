@@ -19,10 +19,7 @@ const Header = ({ t }) => {
 
   const rightSectionClassName = classnames(s.rightSection, active && s["active"]);
   const burgerClassName = classnames(s.burger, active && s["active"]);
-  const logoClassName = classnames(s.logoImage, {
-    [s.logoLight]: isMounted && theme === "dark",
-    [s.logoDark]: !isMounted || theme === "light"
-  });
+  const logoClassName = classnames(s.logoImage, s.logoDynamic);
 
   const toggleMenu = useCallback((flag) => {
     setActive((prev) => {
@@ -48,7 +45,7 @@ const Header = ({ t }) => {
         <Link href="/" onClick={closeMenu}>
           <img
             className={logoClassName}
-            src={!isMounted || theme === "light" ? "/sd-logo-dark.png" : "/sd-logo.png"}
+            src="/sd-logo-dark.png"
             alt="Design System Checklist"
             width="30"
             height="30"
