@@ -19,8 +19,8 @@ const ShareRoute = ({ t }) => {
   );
 };
 
-export async function getStaticProps({ locale }) {
-  const t = (await import(`../../src/translations/${locale}/index`)).default;
+export async function getStaticProps() {
+  const t = (await import('../../src/translations/en/index')).default;
 
   return {
     props: { t },

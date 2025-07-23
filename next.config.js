@@ -2,9 +2,10 @@
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  i18n: {
-    locales: ["en", "ko", "pt", "tr"],
-    defaultLocale: "en",
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true
   },
   reactStrictMode: false,
   webpack: (config, { dev }) => {
