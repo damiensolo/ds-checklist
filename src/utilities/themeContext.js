@@ -7,7 +7,11 @@ export const ThemeProvider = ({ children }) => {
     // Initialize state from localStorage if available
     if (typeof window !== 'undefined') {
       const savedTheme = localStorage.getItem('theme');
-      return savedTheme ? savedTheme === 'dark' : true; // Default to dark mode
+      // If no saved theme exists, default to dark mode
+      if (savedTheme === null) {
+        return true;
+      }
+      return savedTheme === 'dark';
     }
     return true; // Default to dark mode for SSR
   });
